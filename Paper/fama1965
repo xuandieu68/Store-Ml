@@ -1,1 +1,97 @@
+Tóm tắt Fama 1965
+
+I. Giới thiệu và Đối lập các Lý thuyết 
+Trong nhiều năm, câu hỏi về việc liệu lịch sử giá cổ phiếu trong quá khứ có thể được sử dụng để đưa ra các dự đoán có ý nghĩa về giá tương lai hay không đã là một nguồn tranh cãi. Hai lý thuyết chính đối lập nhau là:
+• Các lý thuyết biểu đồ (chartist theories): Cho rằng hành vi giá chứng khoán trong quá khứ chứa nhiều thông tin về hành vi giá trong tương lai. Lịch sử lặp lại chính nó thông qua các "mô hình" hành vi giá trong quá khứ có xu hướng tái diễn trong tương lai, và việc phân tích các biểu đồ có thể giúp dự đoán giá và tăng lợi nhuận.
+• Lý thuyết bước ngẫu nhiên (theory of random walks): Khẳng định rằng đường đi trong tương lai của mức giá một chứng khoán không thể dự đoán được hơn đường đi của một chuỗi số ngẫu nhiên tích lũy. Về mặt thống kê, nó cho rằng những thay đổi giá liên tiếp là các biến ngẫu nhiên độc lập, phân phối giống hệt nhau, ngụ ý rằng chuỗi thay đổi giá không có "trí nhớ"; quá khứ không thể được sử dụng để dự đoán tương lai một cách có ý nghĩa.
+Mục đích của bài viết là thảo luận chi tiết hơn về lý thuyết đằng sau mô hình bước ngẫu nhiên và kiểm tra tính hợp lệ về mặt thực nghiệm của nó.
+II. Lý thuyết Bước Ngẫu nhiên trong Giá Cổ phiếu Lý thuyết bước ngẫu nhiên trong giá cổ phiếu thực sự bao gồm hai giả thuyết riêng biệt: (1) những thay đổi giá liên tiếp là độc lập, và (2) những thay đổi giá tuân theo một phân phối xác suất nào đó.
+A. Giả thuyết Độc lập
+1. Ý nghĩa của Độc lập: Về mặt thống kê, độc lập có nghĩa là phân phối xác suất cho sự thay đổi giá trong khoảng thời gian t không phụ thuộc vào chuỗi thay đổi giá trong các khoảng thời gian trước đó. Nói cách khác, kiến thức về chuỗi thay đổi giá dẫn đến thời điểm t không giúp ích gì trong việc đánh giá phân phối xác suất cho sự thay đổi giá trong khoảng thời gian t.
+    ◦ Đối với mục đích thực tế của nhà giao dịch chứng khoán, mô hình bước ngẫu nhiên hợp lệ miễn là kiến thức về hành vi trong quá khứ của chuỗi thay đổi giá không thể được sử dụng để tăng lợi nhuận kỳ vọng.
+2. Các Tình huống Thị trường Phù hợp với Độc lập: Ngay cả khi có sự phụ thuộc trong quá trình tạo ra thông tin hoặc "nhiễu" (noise) trên thị trường, vẫn có thể có các cơ chế bù trừ dẫn đến độc lập trong thay đổi giá. Ví dụ:
+    ◦ Các nhà giao dịch tinh vi (sophisticated traders): Những nhà giao dịch giỏi ước tính giá trị nội tại hoặc giỏi phân tích biểu đồ có thể ngăn chặn các "bong bóng" giá (bubbles) do sự phụ thuộc trong quá trình tạo nhiễu, hoặc phản ứng nhanh chóng với thông tin mới để loại bỏ sự phụ thuộc trong thông tin. Hành động của họ làm cho giá thực tế phản ánh giá trị nội tại gần như ngay lập tức.
+3. Ý nghĩa của Độc lập:
+    ◦ Khi sự độc lập được thiết lập, việc đọc biểu đồ không còn là hoạt động có lợi nhuận.
+    ◦ Tuy nhiên, phân tích giá trị nội tại vượt trội vẫn có thể tạo ra lợi nhuận lớn hơn, vì họ có khả năng dự đoán sự xuất hiện của thông tin mới và đánh giá tác động của nó lên giá trị nội tại.
+    ◦ Đối với nhà đầu tư trung bình trong thị trường bước ngẫu nhiên, mối quan tâm chính nên là phân tích danh mục đầu tư, không phải liệu các chứng khoán riêng lẻ bị định giá quá cao hay quá thấp.
+B. Giả thuyết Phân phối Thay đổi Giá
+1. Mô hình Bachelier-Osborne: Giả định rằng những thay đổi giá giao dịch là độc lập, phân phối giống hệt nhau với phương sai hữu hạn. Nếu số lượng giao dịch lớn, định lý giới hạn trung tâm (central-limit theorem) gợi ý rằng thay đổi giá hàng ngày, hàng tuần, hàng tháng sẽ có phân phối chuẩn (Gaussian).
+    ◦ Tuy nhiên, các bằng chứng thực nghiệm của Moore và Kendall cho thấy các phân phối thay đổi giá thường có leptokurtosis (độ nhọn lớn hơn phân phối chuẩn), tức là có quá nhiều giá trị gần giá trị trung bình và quá nhiều giá trị ở các phần đuôi cực đoan.
+2. Mandelbrot và Định lý Giới hạn Trung tâm Tổng quát: Benoit Mandelbrot đề xuất rằng phân phối thay đổi giá phù hợp hơn với phân phối Paretian ổn định (stable Paretian distributions) với số mũ đặc trưng (characteristic exponent) α nằm trong khoảng 1 < α < 2.
+    ◦ Khi α < 2, phân phối Paretian ổn định có phương sai vô hạn nhưng giá trị trung bình hữu hạn (nếu α > 1). Phân phối chuẩn là trường hợp đặc biệt khi α = 2.
+    ◦ Điều này ngụ ý rằng nhiều công cụ thống kê thông thường dựa trên giả định phương sai hữu hạn có thể không hoạt động hoặc cho kết quả sai lệch.
+    ◦ Mandelbrot kiểm tra giả thuyết phương sai vô hạn bằng cách tính các moment bậc hai mẫu của log thay đổi giá bông và thấy rằng chúng không ổn định, cho thấy phương sai vô hạn.
+III. & IV. Kiểm định Thực nghiệm về Phân phối
+1. Dữ liệu: Dữ liệu bao gồm giá hàng ngày của 30 cổ phiếu thuộc chỉ số Dow-Jones Industrial Average, thường từ cuối năm 1957 đến tháng 9 năm 1962. Các kiểm định được thực hiện trên thay đổi logarit tự nhiên của giá (daily first differences of their natural logarithms), vì nó đại diện cho lợi suất liên tục, trung hòa hiệu ứng mức giá và gần với thay đổi phần trăm.
+2. Phân phối tần số và biểu đồ xác suất chuẩn:
+    ◦ Kết quả cho thấy leptokurtosis nhất quán ở mọi cổ phiếu: phân phối thực nghiệm có nhiều tần số tương đối hơn ở phần trung tâm và ở các đuôi cực đoan so với phân phối chuẩn. Các biểu đồ xác suất chuẩn thường có dạng chữ S kéo dài (elongated S).
+    ◦ Các thay đổi cực đoan (lớn hơn 4 hoặc 5 độ lệch chuẩn) xảy ra thường xuyên hơn đáng kể so với dự đoán của giả thuyết Gaussian (ví dụ: thay đổi lớn hơn 4 độ lệch chuẩn dự kiến xảy ra 1 lần/50 năm nhưng thực tế là 4 lần/5 năm).
+3. Các giải thích thay thế:
+    ◦ Hỗn hợp các phân phối (ví dụ: cuối tuần/ngày lễ so với ngày thường): Kiểm định cho thấy sự khác biệt về phương sai giữa thay đổi cuối tuần/ngày lễ và thay đổi trong tuần là nhỏ, và các biểu đồ xác suất chuẩn riêng biệt vẫn giữ hình dạng chữ S kéo dài, bác bỏ giả thuyết này.
+    ◦ Thay đổi tham số (non-stationarity): Kiểm định trên các giai đoạn có xu hướng khác nhau cũng cho thấy cùng kiểu hành vi đuôi, cho thấy sự thay đổi nhỏ trong giá trị trung bình không thể giải thích được các đuôi dài của phân phối.
+4. Kiểm định tính ổn định và ước lượng α:
+    ◦ Tính ổn định (stability): Nếu thay đổi giá hàng ngày tuân theo phân phối Paretian ổn định, thì thay đổi trong các khoảng thời gian dài hơn (ví dụ: 4 ngày) cũng sẽ có phân phối Paretian ổn định với cùng giá trị α. So sánh các biểu đồ xác suất chuẩn cho thay đổi hàng ngày và 4 ngày cho thấy hình dạng tương tự, hỗ trợ tính ổn định.
+    ◦ Ước lượng α: Ba phương pháp được sử dụng: (1) biểu đồ log-log và xác suất chuẩn (chủ quan, ước lượng khoảng cho α), (2) phân tích khoảng (range analysis), và (3) phương sai tuần tự (sequential variance).
+        ▪ Các ước lượng α nhất quán cho thấy giá trị nhỏ hơn 2, với giá trị trung bình gần 1.90. Điều này hỗ trợ giả thuyết Mandelbrot rằng phân phối Paretian ổn định với α < 2 phù hợp với dữ liệu tốt hơn giả thuyết Gaussian.
+V. Kiểm định Tính độc lập
+1. Tương quan chuỗi (Serial Correlation): Các hệ số tương quan chuỗi cho thay đổi giá hàng ngày, 4 ngày, 9 ngày và 16 ngày đều rất nhỏ về giá trị tuyệt đối. Mặc dù một số hệ số có ý nghĩa thống kê, nhưng độ lớn của chúng (ví dụ: nhỏ hơn 0.06) được coi là không quan trọng đối với cả nhà thống kê và nhà đầu tư.
+2. Kiểm định chuỗi liên tiếp (Runs Tests): Phân tích sự khác biệt giữa số lượng chuỗi liên tiếp thực tế và số lượng dự kiến. Các khác biệt phần trăm giữa số lượng chuỗi liên tiếp thực tế và dự kiến là khá nhỏ, cho thấy ít hoặc không có sự phụ thuộc.
+3. Kỹ thuật lọc của Alexander (Alexander's Filter Technique):
+    ◦ Đây là một quy tắc giao dịch cơ học: mua khi giá tăng x% từ mức thấp và bán/bán khống khi giá giảm x% từ mức cao.
+    ◦ Nghiên cứu trước đây của Alexander cho thấy lợi nhuận đáng kể, nhưng Fama chỉ ra sai sót trong tính toán của Alexander (bỏ qua cổ tức và giá giao dịch thực tế).
+    ◦ Fama thực hiện kiểm định lại với dữ liệu 30 cổ phiếu DJIA, có tính đến cổ tức và hoa hồng môi giới. Kết quả cho thấy khi tính đến hoa hồng, lợi nhuận từ kỹ thuật lọc chỉ dương cho 4/30 cổ phiếu, và ngay cả khi không tính hoa hồng, lợi nhuận của kỹ thuật lọc cũng chỉ vượt trội so với chiến lược mua-và-giữ (buy-and-hold) ở 7/30 trường hợp.
+    ◦ Kết luận là kỹ thuật lọc không làm mất hiệu lực giả thuyết độc lập của mô hình bước ngẫu nhiên, từ quan điểm của nhà đầu tư và ngay cả nhà giao dịch sàn giao dịch.
+4. Phân phối của các giá trị kế tiếp cho các giá trị lớn: Có bằng chứng cho thấy các thay đổi lớn có xu hướng được theo sau bởi các thay đổi lớn, nhưng với dấu ngẫu nhiên (tăng hoặc giảm). Tuy nhiên, mức độ phụ thuộc này không quá mạnh và không đủ quan trọng cho mục đích đầu tư.
+5. Tổng kết về độc lập: Không có bằng chứng về sự phụ thuộc quan trọng trong chuỗi thay đổi giá cổ phiếu có thể được sử dụng để tăng lợi nhuận kỳ vọng của nhà đầu tư.
+VI. Kết luận và Ý nghĩa
+1. Phân phối Thay đổi Giá: Giả thuyết Mandelbrot (phân phối Paretian ổn định với α < 2) phù hợp với dữ liệu tốt hơn giả thuyết Gaussian (α = 2).
+2. Tính độc lập: Giả thuyết độc lập của mô hình bước ngẫu nhiên là một mô tả đầy đủ về thực tế.
+C. Ý nghĩa của Tính độc lập:
+• Thị trường hiệu quả: Tính độc lập của thay đổi giá liên tiếp phù hợp với sự tồn tại của một thị trường chứng khoán "hiệu quả", nơi giá thực tế luôn đại diện cho các ước tính rất tốt về giá trị nội tại, dựa trên thông tin có sẵn.
+• Phân tích vượt trội: Đọc biểu đồ không có lợi nhuận trong thị trường độc lập, nhưng phân tích giá trị nội tại vượt trội vẫn có thể tạo ra lợi nhuận cao hơn so với chiến lược mua-và-giữ. Tuy nhiên, các quỹ tương hỗ (mutual funds) nói chung không cho thấy hiệu suất tốt hơn thị trường hoặc vượt trội hơn các đối thủ cạnh tranh một cách nhất quán trong giai đoạn 1950-1960.
+D. Ý nghĩa của Giả thuyết Mandelbrot (α < 2):
+• Ý nghĩa kinh tế:
+    ◦ Trong thị trường Paretian ổn định với α < 2, đường đi của mức giá một chứng khoán thường không liên tục, với giá thường nhảy vọt (lên hoặc xuống) với số lượng rất lớn trong thời gian rất ngắn. Điều này phù hợp với một nền kinh tế năng động trong thế giới không chắc chắn, nơi giá trị nội tại thường thay đổi lớn trong thời gian ngắn.
+    ◦ Một thị trường Paretian ổn định với α < 2 vốn dĩ rủi ro hơn thị trường Gaussian, với khả năng thua lỗ lớn hơn. Các công cụ như lệnh "stop-loss" (cắt lỗ) ít hiệu quả hơn do sự thay đổi giá đột ngột.
+• Ý nghĩa thống kê:
+    ◦ Sự thiếu phương sai hữu hạn cho phân phối Paretian ổn định với α < 2 có nghĩa là phương sai và độ lệch chuẩn mẫu sẽ có hành vi cực kỳ thất thường ngay cả đối với các mẫu rất lớn. Chúng không phải là thước đo có ý nghĩa về sự biến động.
+    ◦ Các thước đo thay thế như khoảng tứ phân vị (interfractile ranges) và độ lệch tuyệt đối trung bình (mean absolute deviation) có kỳ vọng hữu hạn và hành vi lấy mẫu ổn định hơn.
+    ◦ Các mô hình kinh tế và công cụ thống kê truyền thống dựa trên giả định phương sai hữu hạn (ví dụ: hồi quy bình phương nhỏ nhất, phân tích danh mục đầu tư Markowitz) cần được xem xét lại. Có thể cần sử dụng các kỹ thuật thay thế như hồi quy giá trị tuyệt đối (absolute-value regression) hoặc các mô hình phân tích danh mục đầu tư khác.
+    ◦ Đối với nhà đầu tư, điều quan trọng là hình dạng của phân phối (đuôi dài), chứ không phải tranh luận về phương sai hữu hạn hay vô hạn.
+E. Hướng nghiên cứu tương lai:
+• Tiếp tục kiểm định độc lập bằng cách trực tiếp kiểm tra các quy tắc giao dịch cơ học và các lý thuyết biểu đồ phổ biến.
+• Phát triển thêm lý thuyết thống kê về phân phối Paretian ổn định, đặc biệt là lý thuyết lấy mẫu cho các ước lượng tham số của chúng, có thể sử dụng các kỹ thuật Monte Carlo.
+Tóm lại, bài viết đưa ra bằng chứng mạnh mẽ ủng hộ giả thuyết bước ngẫu nhiên và giả thuyết Mandelbrot rằng thay đổi giá cổ phiếu tuân theo phân phối Paretian ổn định với các đuôi dài hơn và phương sai vô hạn, điều này có nhiều ý nghĩa quan trọng về kinh tế và thống kê.
+
+
+Các Luồng Tài liệu Chính:
+1. Các Lý thuyết Biểu đồ (Chartist Theories):
+    ◦ Giả định cơ bản: Hành vi giá trong quá khứ của một chứng khoán chứa nhiều thông tin về hành vi giá trong tương lai của nó. Lịch sử lặp lại chính nó thông qua các "mẫu hình" giá trong quá khứ có xu hướng tái diễn trong tương lai.
+    ◦ Mục tiêu: Phân tích các biểu đồ giá để hiểu các "mẫu hình", từ đó dự đoán hành vi giá trong tương lai và tăng lợi nhuận kỳ vọng.
+    ◦ Ví dụ nổi tiếng nhất: Lý thuyết Dow.
+2. Lý thuyết Bước Ngẫu nhiên (Random Walk Theory):
+    ◦ Giả định cơ bản: Đường đi tương lai của mức giá một chứng khoán không thể dự đoán được, tương tự như đường đi của một chuỗi các số ngẫu nhiên tích lũy. Các thay đổi giá liên tiếp là các biến ngẫu nhiên độc lập, phân phối giống hệt nhau. Điều này ngụ ý rằng chuỗi thay đổi giá không có "trí nhớ", tức là quá khứ không thể được sử dụng để dự đoán tương lai một cách có ý nghĩa.
+    ◦ Hai giả thuyết riêng biệt: (1) các thay đổi giá liên tiếp là độc lập, và (2) các thay đổi giá tuân theo một phân phối xác suất nào đó. Trong đó, tính độc lập là quan trọng nhất.
+Các Bài nghiên cứu quan trọng trong từng luồng:
+Trong Lý thuyết Biểu đồ:
+• Lý thuyết Dow: Được nêu bật là ví dụ nổi tiếng nhất của lý thuyết biểu đồ.
+Trong Lý thuyết Bước Ngẫu nhiên:
+• Tác phẩm chính của Bachelier và Osborne:
+    ◦ Bachelier, L. J. B. A. "Théorie de la spéculation." Paris: Gauthier-Villars, 1900. – Đây được xem là sự phát triển hoàn chỉnh đầu tiên của lý thuyết bước ngẫu nhiên trong giá chứng khoán. Mặc dù không nhận được nhiều sự chú ý từ các nhà kinh tế vào thời điểm đó, mô hình của ông đã được phát triển độc lập lại sau này.
+    ◦ Osborne, M. F. M. "Brownian Motion in the Stock Market," Operations Research, VII (March-April, 1959), 145-73. – Đã phát triển lại mô hình của Bachelier một cách độc lập hơn năm mươi năm sau. Mô hình Bachelier-Osborne giả định rằng các thay đổi giá từ giao dịch này sang giao dịch khác là các biến ngẫu nhiên độc lập, phân phối giống hệt nhau, và nếu số lượng giao dịch lớn, các thay đổi giá hàng ngày, hàng tuần, hàng tháng sẽ có phân phối chuẩn (Gaussian).
+• Các nghiên cứu ban đầu hỗ trợ giả thuyết Gaussian:
+    ◦ Moore, Arnold. "A Statistical Analysis of Common-Stock Prices," unpublished Ph.D. dissertation, Graduate School of Business, University of Chicago, 1962. – Đã cung cấp bằng chứng thực nghiệm ủng hộ giả thuyết Gaussian, mặc dù ông cũng nhận thấy có quá nhiều thay đổi giá lớn.
+    ◦ Kendall, M. G. "The Analysis of Economic Time-Series," Journal of the Royal Statistical Society (Ser. A), XCVI (1953), 11-25. – Tương tự, quan sát thấy các thay đổi giá cổ phiếu ở Anh có vẻ tuân theo phân phối chuẩn gần đúng, nhưng cũng nhận thấy đa số các phân phối có tính lồi (leptokurtic) – tức là có quá nhiều giá trị gần giá trị trung bình và quá nhiều giá trị ở hai cực của phân phối.
+• Phê bình và mở rộng bởi Mandelbrot:
+    ◦ Mandelbrot, Benoit. "The Variation of Certain Speculative Prices," Journal of Business, XXXVI (October, 1963), 394-419. – Tác phẩm chính của Mandelbrot trong lĩnh vực này. Ông đặt nghi vấn nghiêm trọng về giả thuyết Gaussian, cho rằng nghiên cứu học thuật trong quá khứ đã bỏ qua hàm ý của tính lồi thường được quan sát trong các phân phối thay đổi giá thực nghiệm. Giả thuyết của Mandelbrot là các phân phối thay đổi giá trong các chuỗi đầu cơ là các phân phối Paretian ổn định với số mũ đặc trưng α nằm trong khoảng 1 < α < 2, có nghĩa là chúng có giá trị trung bình nhưng phương sai vô hạn. Đây được coi là sự tổng quát hóa các lập luận của định lý giới hạn trung tâm của Bachelier và Osborne cho trường hợp các phân phối thay đổi giá cơ bản có phương sai vô hạn.
+    ◦ Alexander, S. S. "Price Movements in Speculative Markets: Trends or Random Walks," Industrial Management Review, II (May, 1961), 7-26. và Alexander, S. S. "Price Movements in Speculative Markets: Trends or Random Walks, No. 2" in PAUL H. COOTNER (ed.), pp. 338-72. – Đã tiến hành kiểm tra kỹ thuật lọc (filter technique) để kiểm tra các quy tắc giao dịch cơ học, ban đầu cho thấy lợi nhuận đáng kể, nhưng sau đó đã được sửa lỗi tính toán (Mandelbrot đã phát hiện ra lỗi) và Alexander tự điều chỉnh, kết luận rằng các bộ lọc hiếm khi tốt hơn chính sách mua và giữ (buy-and-hold), ủng hộ giả định độc lập của mô hình bước ngẫu nhiên.
+    ◦ Cootner, Paul H. "Stock Prices: Random vs. Systematic Changes," Industrial Management Review, III (Spring, 1962), 25-45. – Đã phát triển một lý thuyết để giải thích các "đuôi dài" của các phân phối thực nghiệm.
+• Các nghiên cứu khác được đề cập:
+    ◦ Wise, John. "Linear Estimators for Linear Regression Systems Having Infinite Variances," paper presented at the Berkeley-Stanford Mathematical Economics Seminar, October, 1963. – Đã chỉ ra rằng nếu số mũ đặc trưng α của quá trình Paretian ổn định cơ bản lớn hơn 1, thì ước lượng hệ số tương quan nối tiếp (serial correlation coefficient) là nhất quán và không chệch.
+    ◦ Godfrey, Michael D., Granger, Clive W. J., and Morgenstern, Oskar. "The Random Walk Hypothesis of Stock Market Behavior," Kyklos, XVII (1964), 1-30. – Nghiên cứu của họ cũng ghi nhận sự không quan trọng của hiệu ứng cuối tuần.
+    ◦ Granger, C. W. J., and Morgenstern, O. "Spectral Analysis of New York Stock Market Prices," Kyklos, XVI (1963), 1-27. – Một ví dụ về nghiên cứu học thuật tinh vi về phân tích thống kê thị trường chứng khoán.
+    ◦ Markowitz, Harry. Portfolio Selection: Efficient Diversification of Investments. New York: John Wiley & Sons, 1959. – Tác giả đề cập đến công trình của Markowitz về phân tích danh mục đầu tư hiệu quả.
+    ◦ Miller, Merton H., and Modigliani, Franco. "Dividend Policy, Growth, and the Valuation of Shares," Journal of Business, XXXIV (October, 1961), 411-33. – Cung cấp một sự biện minh dài và nghiêm ngặt cho các phát biểu về xu hướng giá.
+
 
