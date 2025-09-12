@@ -63,3 +63,34 @@ E. Hướng nghiên cứu tương lai:
 • Tiếp tục kiểm định độc lập bằng cách trực tiếp kiểm tra các quy tắc giao dịch cơ học và các lý thuyết biểu đồ phổ biến.
 • Phát triển thêm lý thuyết thống kê về phân phối Paretian ổn định, đặc biệt là lý thuyết lấy mẫu cho các ước lượng tham số của chúng, có thể sử dụng các kỹ thuật Monte Carlo.
 Tóm lại, bài viết đưa ra bằng chứng mạnh mẽ ủng hộ giả thuyết bước ngẫu nhiên và giả thuyết Mandelbrot rằng thay đổi giá cổ phiếu tuân theo phân phối Paretian ổn định với các đuôi dài hơn và phương sai vô hạn, điều này có nhiều ý nghĩa quan trọng về kinh tế và thống kê.
+
+
+Các Luồng Tài liệu Chính:
+1. Các Lý thuyết Biểu đồ (Chartist Theories):
+    ◦ Giả định cơ bản: Hành vi giá trong quá khứ của một chứng khoán chứa nhiều thông tin về hành vi giá trong tương lai của nó. Lịch sử lặp lại chính nó thông qua các "mẫu hình" giá trong quá khứ có xu hướng tái diễn trong tương lai.
+    ◦ Mục tiêu: Phân tích các biểu đồ giá để hiểu các "mẫu hình", từ đó dự đoán hành vi giá trong tương lai và tăng lợi nhuận kỳ vọng.
+    ◦ Ví dụ nổi tiếng nhất: Lý thuyết Dow.
+2. Lý thuyết Bước Ngẫu nhiên (Random Walk Theory):
+    ◦ Giả định cơ bản: Đường đi tương lai của mức giá một chứng khoán không thể dự đoán được, tương tự như đường đi của một chuỗi các số ngẫu nhiên tích lũy. Các thay đổi giá liên tiếp là các biến ngẫu nhiên độc lập, phân phối giống hệt nhau. Điều này ngụ ý rằng chuỗi thay đổi giá không có "trí nhớ", tức là quá khứ không thể được sử dụng để dự đoán tương lai một cách có ý nghĩa.
+    ◦ Hai giả thuyết riêng biệt: (1) các thay đổi giá liên tiếp là độc lập, và (2) các thay đổi giá tuân theo một phân phối xác suất nào đó. Trong đó, tính độc lập là quan trọng nhất.
+Các Bài nghiên cứu quan trọng trong từng luồng:
+Trong Lý thuyết Biểu đồ:
+• Lý thuyết Dow: Được nêu bật là ví dụ nổi tiếng nhất của lý thuyết biểu đồ.
+Trong Lý thuyết Bước Ngẫu nhiên:
+• Tác phẩm chính của Bachelier và Osborne:
+    ◦ Bachelier, L. J. B. A. "Théorie de la spéculation." Paris: Gauthier-Villars, 1900. – Đây được xem là sự phát triển hoàn chỉnh đầu tiên của lý thuyết bước ngẫu nhiên trong giá chứng khoán. Mặc dù không nhận được nhiều sự chú ý từ các nhà kinh tế vào thời điểm đó, mô hình của ông đã được phát triển độc lập lại sau này.
+    ◦ Osborne, M. F. M. "Brownian Motion in the Stock Market," Operations Research, VII (March-April, 1959), 145-73. – Đã phát triển lại mô hình của Bachelier một cách độc lập hơn năm mươi năm sau. Mô hình Bachelier-Osborne giả định rằng các thay đổi giá từ giao dịch này sang giao dịch khác là các biến ngẫu nhiên độc lập, phân phối giống hệt nhau, và nếu số lượng giao dịch lớn, các thay đổi giá hàng ngày, hàng tuần, hàng tháng sẽ có phân phối chuẩn (Gaussian).
+• Các nghiên cứu ban đầu hỗ trợ giả thuyết Gaussian:
+    ◦ Moore, Arnold. "A Statistical Analysis of Common-Stock Prices," unpublished Ph.D. dissertation, Graduate School of Business, University of Chicago, 1962. – Đã cung cấp bằng chứng thực nghiệm ủng hộ giả thuyết Gaussian, mặc dù ông cũng nhận thấy có quá nhiều thay đổi giá lớn.
+    ◦ Kendall, M. G. "The Analysis of Economic Time-Series," Journal of the Royal Statistical Society (Ser. A), XCVI (1953), 11-25. – Tương tự, quan sát thấy các thay đổi giá cổ phiếu ở Anh có vẻ tuân theo phân phối chuẩn gần đúng, nhưng cũng nhận thấy đa số các phân phối có tính lồi (leptokurtic) – tức là có quá nhiều giá trị gần giá trị trung bình và quá nhiều giá trị ở hai cực của phân phối.
+• Phê bình và mở rộng bởi Mandelbrot:
+    ◦ Mandelbrot, Benoit. "The Variation of Certain Speculative Prices," Journal of Business, XXXVI (October, 1963), 394-419. – Tác phẩm chính của Mandelbrot trong lĩnh vực này. Ông đặt nghi vấn nghiêm trọng về giả thuyết Gaussian, cho rằng nghiên cứu học thuật trong quá khứ đã bỏ qua hàm ý của tính lồi thường được quan sát trong các phân phối thay đổi giá thực nghiệm. Giả thuyết của Mandelbrot là các phân phối thay đổi giá trong các chuỗi đầu cơ là các phân phối Paretian ổn định với số mũ đặc trưng α nằm trong khoảng 1 < α < 2, có nghĩa là chúng có giá trị trung bình nhưng phương sai vô hạn. Đây được coi là sự tổng quát hóa các lập luận của định lý giới hạn trung tâm của Bachelier và Osborne cho trường hợp các phân phối thay đổi giá cơ bản có phương sai vô hạn.
+    ◦ Alexander, S. S. "Price Movements in Speculative Markets: Trends or Random Walks," Industrial Management Review, II (May, 1961), 7-26. và Alexander, S. S. "Price Movements in Speculative Markets: Trends or Random Walks, No. 2" in PAUL H. COOTNER (ed.), pp. 338-72. – Đã tiến hành kiểm tra kỹ thuật lọc (filter technique) để kiểm tra các quy tắc giao dịch cơ học, ban đầu cho thấy lợi nhuận đáng kể, nhưng sau đó đã được sửa lỗi tính toán (Mandelbrot đã phát hiện ra lỗi) và Alexander tự điều chỉnh, kết luận rằng các bộ lọc hiếm khi tốt hơn chính sách mua và giữ (buy-and-hold), ủng hộ giả định độc lập của mô hình bước ngẫu nhiên.
+    ◦ Cootner, Paul H. "Stock Prices: Random vs. Systematic Changes," Industrial Management Review, III (Spring, 1962), 25-45. – Đã phát triển một lý thuyết để giải thích các "đuôi dài" của các phân phối thực nghiệm.
+• Các nghiên cứu khác được đề cập:
+    ◦ Wise, John. "Linear Estimators for Linear Regression Systems Having Infinite Variances," paper presented at the Berkeley-Stanford Mathematical Economics Seminar, October, 1963. – Đã chỉ ra rằng nếu số mũ đặc trưng α của quá trình Paretian ổn định cơ bản lớn hơn 1, thì ước lượng hệ số tương quan nối tiếp (serial correlation coefficient) là nhất quán và không chệch.
+    ◦ Godfrey, Michael D., Granger, Clive W. J., and Morgenstern, Oskar. "The Random Walk Hypothesis of Stock Market Behavior," Kyklos, XVII (1964), 1-30. – Nghiên cứu của họ cũng ghi nhận sự không quan trọng của hiệu ứng cuối tuần.
+    ◦ Granger, C. W. J., and Morgenstern, O. "Spectral Analysis of New York Stock Market Prices," Kyklos, XVI (1963), 1-27. – Một ví dụ về nghiên cứu học thuật tinh vi về phân tích thống kê thị trường chứng khoán.
+    ◦ Markowitz, Harry. Portfolio Selection: Efficient Diversification of Investments. New York: John Wiley & Sons, 1959. – Tác giả đề cập đến công trình của Markowitz về phân tích danh mục đầu tư hiệu quả.
+    ◦ Miller, Merton H., and Modigliani, Franco. "Dividend Policy, Growth, and the Valuation of Shares," Journal of Business, XXXIV (October, 1961), 411-33. – Cung cấp một sự biện minh dài và nghiêm ngặt cho các phát biểu về xu hướng giá.
+
