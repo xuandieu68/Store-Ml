@@ -44,6 +44,7 @@ V. Kiểm định Tính độc lập
     ◦ Kết luận là kỹ thuật lọc không làm mất hiệu lực giả thuyết độc lập của mô hình bước ngẫu nhiên, từ quan điểm của nhà đầu tư và ngay cả nhà giao dịch sàn giao dịch.
 4. Phân phối của các giá trị kế tiếp cho các giá trị lớn: Có bằng chứng cho thấy các thay đổi lớn có xu hướng được theo sau bởi các thay đổi lớn, nhưng với dấu ngẫu nhiên (tăng hoặc giảm). Tuy nhiên, mức độ phụ thuộc này không quá mạnh và không đủ quan trọng cho mục đích đầu tư.
 5. Tổng kết về độc lập: Không có bằng chứng về sự phụ thuộc quan trọng trong chuỗi thay đổi giá cổ phiếu có thể được sử dụng để tăng lợi nhuận kỳ vọng của nhà đầu tư.
+
 VI. Kết luận và Ý nghĩa
 1. Phân phối Thay đổi Giá: Giả thuyết Mandelbrot (phân phối Paretian ổn định với α < 2) phù hợp với dữ liệu tốt hơn giả thuyết Gaussian (α = 2).
 2. Tính độc lập: Giả thuyết độc lập của mô hình bước ngẫu nhiên là một mô tả đầy đủ về thực tế.
@@ -94,4 +95,34 @@ Trong Lý thuyết Bước Ngẫu nhiên:
     ◦ Markowitz, Harry. Portfolio Selection: Efficient Diversification of Investments. New York: John Wiley & Sons, 1959. – Tác giả đề cập đến công trình của Markowitz về phân tích danh mục đầu tư hiệu quả.
     ◦ Miller, Merton H., and Modigliani, Franco. "Dividend Policy, Growth, and the Valuation of Shares," Journal of Business, XXXIV (October, 1961), 411-33. – Cung cấp một sự biện minh dài và nghiêm ngặt cho các phát biểu về xu hướng giá.
 
+    
+  # Phương pháp luận (Methodology) # 
+Mục đích của bài báo là thảo luận và kiểm tra tính hợp lệ thực nghiệm của mô hình bước ngẫu nhiên (random walk model) về hành vi giá chứng khoán. Mô hình này dựa trên hai giả thuyết chính: (1) các thay đổi giá liên tiếp là độc lập và (2) các thay đổi giá tuân theo một phân phối xác suất nào đó.
+• Kiểm tra Phân phối Thay đổi Giá (Distribution of Price Changes):
+    ◦ Phân tích phân phối tần suất và biểu đồ xác suất chuẩn (Frequency Distributions & Normal Probability Graphs): Xây dựng các phân phối tần suất và biểu đồ xác suất chuẩn cho hiệu số log giá hàng ngày. Quan sát thấy các phân phối thực nghiệm có tính lồi (leptokurtosis) – tức là có nhiều quan sát ở trung tâm và các "đuôi" dài hơn so với phân phối chuẩn (Gaussian).
+    ◦ Kiểm tra các giải thích thay thế:
+        ▪ Hỗn hợp các phân phối (Mixture of Distributions): Kiểm tra giả thuyết rằng các thay đổi giá cuối tuần và ngày lễ có thể đến từ một phân phối chuẩn với phương sai khác. Kết quả không ủng hộ giả thuyết này.
+        ▪ Tham số thay đổi (Changing Parameters): Kiểm tra giả thuyết về tính không ổn định, tức là sự thay đổi giá trung bình trong các khoảng thời gian khác nhau. Các kiểm tra cho thấy hành vi ở các "đuôi" của phân phối độc lập với giá trị trung bình.
+    ◦ Kiểm tra tính ổn định và ước tính số mũ đặc trưng (Stability & Characteristic Exponent α):
+        ▪ Tính ổn định (Stability): Sử dụng biểu đồ xác suất chuẩn cho các khoảng thời gian khác nhau (ví dụ: thay đổi giá hàng ngày so với 4 ngày) để kiểm tra xem dạng "S kéo dài" có duy trì không. Kết luận tính ổn định dường như được chứng minh.
+        ▪ Ước tính α: Sử dụng ba kỹ thuật khác nhau để ước tính số mũ đặc trưng α của phân phối Paretian ổn định:
+            • Biểu đồ Double-Log và Xác suất Chuẩn (Double-Log and Probability Graphs): Phương pháp chủ quan này sử dụng mối quan hệ giữa các biểu đồ log-log lý thuyết và biểu đồ xác suất chuẩn để ước tính khoảng giá trị của α.
+            • Phân tích Khoảng (Range Analysis): Dựa trên tính chất mở rộng theo lũy thừa của n (số quan sát) đối với các khoảng phân vị của tổng các biến Paretian ổn định. Kỹ thuật này được coi là chính xác hơn so với phương sai tuần tự.
+            • Phương sai Tuần tự (Sequential Variance): Sử dụng sự tăng trưởng của phương sai mẫu tích lũy theo thời gian để ước tính α. Tuy nhiên, kỹ thuật này được xem là yếu nhất do tính thất thường của các ước tính.
+        ▪ Kết luận về phân phối: Các ước tính của α hầu hết nhỏ hơn 2, với giá trị trung bình gần 1.90, cung cấp bằng chứng ủng hộ giả thuyết Mandelbrot hơn là giả thuyết Gaussian.
+• Kiểm tra tính độc lập (Tests for Dependence):
+    ◦ Hệ số tương quan chuỗi (Serial Correlation): Tính toán hệ số tương quan chuỗi cho các thay đổi log giá hàng ngày, 4 ngày, 9 ngày và 16 ngày. Hầu hết các hệ số đều rất nhỏ về giá trị tuyệt đối, cho thấy sự phụ thuộc rất nhỏ hoặc không tồn tại.
+    ◦ Kiểm tra chuỗi (Runs Tests): Phân tích số lượng chuỗi thực tế so với số lượng chuỗi dự kiến (một chuỗi là một chuỗi các thay đổi giá cùng dấu). Các kiểm tra được thực hiện theo tổng số chuỗi, dấu của chuỗi và độ dài của chuỗi. Kết quả cho thấy ít bằng chứng về sự phụ thuộc đáng kể.
+    ◦ Kỹ thuật lọc của Alexander (Alexander's Filter Technique): Kiểm tra trực tiếp một quy tắc giao dịch cơ học dựa trên mẫu hình giá. Nghiên cứu của Fama, có tính đến hoa hồng và cổ tức, cho thấy kỹ thuật lọc này không tạo ra lợi nhuận cao hơn đáng kể so với chiến lược mua và giữ (buy-and-hold), đặc biệt sau khi điều chỉnh các lỗi tính toán ban đầu của Alexander.
+    ◦ Phân phối của các giá trị kế tiếp cho các giá trị lớn (Distribution of Successors to Large Values): Kiểm tra liệu các thay đổi giá lớn có xu hướng được theo sau bởi các thay đổi lớn khác (với dấu ngẫu nhiên) hay không. Kết quả cho thấy có bằng chứng về sự tập trung của các giá trị lớn hơn một chút so với mô hình ngẫu nhiên thuần túy, nhưng sự phụ thuộc này không quá mạnh.
+    ◦ Kết luận về tính độc lập: Các bằng chứng từ tất cả các kiểm tra cho thấy sự phụ thuộc trong các thay đổi giá liên tiếp là cực kỳ nhỏ hoặc không tồn tại, và không đủ mạnh để tạo ra lợi nhuận đáng kể cho nhà đầu tư hoặc giải thích sự lệch chuẩn.
+
+3. Các biến chính (Main Variables)
+• Giá của chứng khoán ($P_t$): Giá đóng cửa hàng ngày được sử dụng làm dữ liệu thô.
+• Thay đổi log giá ($U_{t+1}$): Biến chính được phân tích, được định nghĩa là $log_e P_{t+1} - log_e P_t$. Nó đại diện cho tỷ suất sinh lợi liên tục của cổ phiếu.
+• Số mũ đặc trưng (α - Characteristic Exponent): Một tham số quan trọng của phân phối Paretian ổn định, quyết định độ cao của các "đuôi" cực đoan của phân phối và là trọng tâm trong việc đánh giá hình dạng của phân phối thay đổi giá.
+• Hệ số tương quan chuỗi ($r_τ$): Một thước đo thống kê của mối quan hệ giữa một thay đổi giá và thay đổi giá trước đó trong chuỗi thời gian.
+• Số lượng chuỗi (Runs): Số lượng các chuỗi thay đổi giá liên tiếp có cùng dấu.
+• Lợi nhuận của bộ lọc (Filter Profitability): Lợi nhuận được tạo ra bởi quy tắc giao dịch "kỹ thuật lọc" của Alexander, được so sánh với lợi nhuận của chiến lược mua và giữ.
+• Các giá trị kế tiếp của thay đổi giá lớn (Successors to Large Values): Thay đổi giá vào ngày liền kề sau một thay đổi giá lớn.
 
