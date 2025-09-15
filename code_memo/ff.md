@@ -2,18 +2,21 @@
 title: FF5 factor 
 ---
 
-#**Các bước chính để tính 5 yếu tố**
-##**Chia Size**: median vốn hóa → Small (S) vs Big (B).
-##**Chia Value (BM)**: 30% thấp = Growth (L), 30% cao = Value (H).
+**Các bước chính để tính 5 yếu tố**
+
+**Chia Size**: median vốn hóa → Small (S) vs Big (B).
+
+**Chia Value (BM)**: 30% thấp = Growth (L), 30% cao = Value (H).
 → Dùng để tính HML.
-##**Chia Profitability (OP = Operating Profitability)**: 30% thấp = Weak (W), 30% cao = Robust (R).
+**Chia Profitability (OP = Operating Profitability)**: 30% thấp = Weak (W), 30% cao = Robust (R).
 → Dùng để tính RMW.
-##**Chia Investment (Inv = Asset growth)**: 30% thấp = Conservative (C), 30% cao = Aggressive (A).
+
+**Chia Investment (Inv = Asset growth)**: 30% thấp = Conservative (C), 30% cao = Aggressive (A).
 → Dùng để tính CMA.
 SMB được tính như trung bình SMB từ ba kiểu phân loại (Size–BM, Size–OP, Size–Inv).
 
 
-#** Hàm Python ** 
+** Hàm Python ** 
 ```python
 
 import pandas as pd
