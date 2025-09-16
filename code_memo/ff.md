@@ -262,7 +262,7 @@ def simul_100_ports(df, factor1, factor2, nport=10, wgt='ew', ret='fxret'):
 --- 
 Hồi quy OLS for CAPM, FF3,FF5 
 ---
-```
+```python 
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -321,6 +321,5 @@ def est_params(df: pd.DataFrame, model_type: str = None):
 
     res = pd.DataFrame({'coef': formatted}, index=model.params.index)
     return res
-
 ```
 
