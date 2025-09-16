@@ -17,8 +17,6 @@
 
 SMB được tính như trung bình SMB từ ba kiểu phân loại (Size–BM, Size–OP, Size–Inv).
 
-
-** Hàm Python ** 
 ```python
 
 import pandas as pd
@@ -125,7 +123,7 @@ Tính HML = trung bình High BM – trung bình Low BM.
 
 Tính MKT = lợi nhuận toàn thị trường (value-weighted). Nếu có risk-free (RF) → MKT-RF.
 
-** Hàm python**
+
 ```python
 import pandas as pd
 
@@ -194,3 +192,135 @@ def fama_french_3f(df: pd.DataFrame, rf: pd.Series = None):
     factors = pd.DataFrame(factors).set_index("date").sort_index()
     return factors
 ```
+
+---
+Trọng số 
+--- 
+```python
+def wmean(x, wgt, var):
+    """
+    Tính trung bình có trọng số.
+
+    Parameters
+    ----------
+    x : DataFrame
+        Dữ liệu đầu vào, phải chứa các cột tương ứng với `wgt` và `var`.
+    wgt : str
+        Tên cột dùng làm trọng số.
+    var : str
+        Tên cột chứa biến cần tính trung bình.
+
+    Returns
+    -------
+    float
+        Giá trị trung bình có trọng số.
+    """
+    num = (x[wgt] * x[var]).sum()  # Tổng tích giữa trọng số và biến
+    den = x[wgt].sum()  # Tổng trọng số
+    return num / den
+```
+
+---
+Simulation portfolio with 2 factor 
+---
+```python
+def simul_100_ports(df, factor1, factor2, nport=10, wgt='ew', ret='fxret'):
+    # Xử lý các giá trị bị thiếu
+    df = df.dropna(subset=[factor1, factor2])
+
+    # Xếp hạng các cổ phiếu dựa trên 2 yếu tố (factor1 và factor2)
+    rank1 = (df.groupby('date')[factor1]
+                .transform(pd.qcut, q=nport, labels=range(1, nport + 1)))
+    rank2 = (df.groupby('date')[factor2]
+                .transform(pd.qcut, q=nport, labels=range(1, nport + 1)))
+    
+    # Tạo bảng với các port từ hai yếu tố
+    df['port'] = (df['rank1'] - 1) * nport + df['rank2']
+    
+    # Tính toán lợi suất theo cách tính trọng số
+    if wgt == 'ew':
+        port_xret = df.groupby(['date', 'port'])[ret].mean()
+    elif wgt == 'vw':
+        port_xret = df.groupby(['date', 'port']).apply(wmean, 'me', ret)
+    else:
+        print("weight scheme should be either 'ew' or 'vw'.")
+        return
+
+    port_xret = port_xret.unstack().shift()
+
+    # Đếm số lượng cổ phiếu trong mỗi port
+    port_count = df.groupby(['date', 'port'])[ret].count()
+    port_count = port_count.unstack().shift()
+
+    # Tính toán đặc điểm của các port
+    port_character = df.groupby(['date', 'port']).mean(numeric_only=True).groupby(level=1).shift().groupby(level=1).mean()
+
+    return port_xret, port_count, port_character
+```
+
+
+--- 
+Hồi quy OLS for CAPM, FF3,FF5 
+---
+```
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
+def est_params(df: pd.DataFrame, model_type: str = None):
+    '''
+    CAPM, FF3, FF5 모형에 대해 alpha와 모든 계수 및 t-value를 추정하는 함수
+    새로운 출력 형식: coef (t-value)
+
+    Parameters
+    ----------
+    df : DataFrame
+        반드시 포함해야 하는 컬럼:
+            - 'xret'
+            - 'MKT'
+        선택적으로:
+            - 'SMB','HML' (FF3, FF5)
+            - 'RMW','CMA' (FF5)
+
+    model_type : str, optional
+        None  : 단순 평균 alpha (평균 초과수익률)
+        'CAPM': CAPM 회귀
+        'FF3' : Fama-French 3 factor 회귀
+        'FF5' : Fama-French 5 factor 회귀
+
+    Returns
+    -------
+    DataFrame
+        index = 변수명 (const, MKT, SMB, HML, RMW, CMA)
+        columns = ['coef'] : "coef\n(t-value)" 형식
+    '''
+    y = df['xret']
+
+    if model_type == 'CAPM':
+        X = df[['MKT']]
+    elif model_type == 'FF3':
+        X = df[['MKT','SMB','HML']]
+    elif model_type == 'FF5':
+        X = df[['MKT','SMB','HML','RMW','CMA']]
+    else:
+        # 단순 평균 alpha
+        alpha = np.mean(y)
+        t_val = alpha / (np.std(y, ddof=1) / np.sqrt(len(y)))
+        res = pd.DataFrame({'coef':[f"{alpha:.4f}\n({t_val:.2f})"]}, index=['const'])
+        return res
+
+    X = sm.add_constant(X)
+    model = sm.OLS(y, X).fit()
+
+    # hệ số và t-value format
+    formatted = []
+    for var in model.params.index:
+        coef = model.params[var]
+        tval = model.tvalues[var]
+        formatted.append(f"{coef:.4f}\n({tval:.2f})")
+
+    res = pd.DataFrame({'coef': formatted}, index=model.params.index)
+    return res
+
+```
+
