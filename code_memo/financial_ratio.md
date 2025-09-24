@@ -197,4 +197,4 @@ def add_additional_ratios(df: pd.DataFrame, firm_col: str = None, time_col: str 
 ```
 
 
-Bạn có muốn mình viết thêm lựa chọn **chỉ tính một nhóm chỉ số** (ví dụ chỉ market-based, chỉ profitability) để dễ kiểm soát không?
+
