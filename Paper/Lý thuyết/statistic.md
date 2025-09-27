@@ -14,15 +14,15 @@ x là biến độc lập
 
 Hệ số hồi quy (β) thể hiện mức độ ảnh hưởng của biến độc lập X lên biến phụ thuộc Y
 
-  **Hệ số dương (βi > 0)**
+*  **Hệ số dương (βi > 0)**
 
 - Khi giá trị của Xi tăng 1 đơn vị, Y tăng trung bình βi  đơn vị (giữ nguyên các biến khác).
 
-  **Hệ số âm (βi<0)**
+*  **Hệ số âm (βi<0)**
 
 - Khi Xi tăng 1 đơn vị, Y giảm trung bình βi  đơn vị.
 
-  **Hệ số bằng 0**
+*  **Hệ số bằng 0**
 
 - Biến Xi không có tác động đến Y trong mô hình.
 - Nếu kiểm định thống kê (p-value) lớn hơn mức ý nghĩa (ví dụ: 0.05), ta có thể không sử dụng biến này.
@@ -42,13 +42,13 @@ P-value là xác suất nhận được kết quả ít nhất cũng cực đoan
 - **Giả thuyết gốc (Null hypothesis)**: H0: βi=0 (Biến độc lập không có tác động đến biến phụ thuộc).
 - **Giả thuyết thay thế (Alternative hypothesis)**: H1: βi≠0 (Biến độc lập có tác động đến biến phụ thuộc).
 
-  Nếu p nhỏ hơn mức ý nghĩa (ví dụ: 0.05), bác bỏ H0 và kết luận rằng biến độc lập có tác động đáng kể.
+*  Nếu p nhỏ hơn mức ý nghĩa (ví dụ: 0.05), bác bỏ H0 và kết luận rằng biến độc lập có tác động đáng kể.
 
-  Nếu p lớn hơn mức ý nghĩa, không bác bỏ H0  và kết luận rằng không có bằng chứng đủ mạnh để nói rằng biến độc lập có tác động đến biến phụ thuộc.
+*  Nếu p lớn hơn mức ý nghĩa, không bác bỏ H0  và kết luận rằng không có bằng chứng đủ mạnh để nói rằng biến độc lập có tác động đến biến phụ thuộc.
 
-  **Khi p-value < 0.01**: Bác bỏ giả thuyết gốc với mức độ tin cậy 99%. Có đủ bằng chứng để kết luận rằng biến độc lập có ảnh hưởng đáng kể đến biến phụ thuộc.
+*  **Khi p-value < 0.01**: Bác bỏ giả thuyết gốc với mức độ tin cậy 99%. Có đủ bằng chứng để kết luận rằng biến độc lập có ảnh hưởng đáng kể đến biến phụ thuộc.
 
-  **Khi p-value ≥ 0.01**: Không bác bỏ giả thuyết gốc. Không có đủ bằng chứng để kết luận rằng biến độc lập có ảnh hưởng đáng kể.
+*  **Khi p-value ≥ 0.01**: Không bác bỏ giả thuyết gốc. Không có đủ bằng chứng để kết luận rằng biến độc lập có ảnh hưởng đáng kể.
 
 | **Mức ý nghĩa (α)** | **p-value < α  (Bác bỏ H0)** | **p-value ≥ α Không bác bỏ H0** |
 | --- | --- | --- |
@@ -60,9 +60,9 @@ P-value là xác suất nhận được kết quả ít nhất cũng cực đoan
 
 **R2 (R-squared)**: Đo lường mức độ mà mô hình giải thích được biến động của biến phụ thuộc. cho biết mức độ phù hợp của mô hình với dữ liệu.
 
-  SSresidual là tổng bình phương sai số (residual sum of squares), đo lường sự chênh lệch giữa giá trị thực tế và giá trị dự đoán của mô hình.
+*  SSresidual là tổng bình phương sai số (residual sum of squares), đo lường sự chênh lệch giữa giá trị thực tế và giá trị dự đoán của mô hình.
 
-  SStotal là tổng bình phương tổng thể (total sum of squares), đo lường sự chênh lệch giữa giá trị thực tế và giá trị trung bình của biến phụ thuộc.
+*  SStotal là tổng bình phương tổng thể (total sum of squares), đo lường sự chênh lệch giữa giá trị thực tế và giá trị trung bình của biến phụ thuộc.
 
 Ví dụ: Nếu R^2=0.80 , điều này có nghĩa là 80% sự biến động của biến phụ thuộc có thể được giải thích bởi mô hình, còn lại 20% là do yếu tố khác ngoài mô hình.
 
@@ -72,9 +72,9 @@ Ví dụ: Nếu R^2=0.80 , điều này có nghĩa là 80% sự biến động c
 - ppp là số lượng biến độc lập trong mô hình.
 - R^2 là hệ số xác định (đã tính toán từ mô hình).
 
-  adj-**R2** có thể giảm nếu mô hình có nhiều biến độc lập không giải thích được sự biến động của biến phụ thuộc.
+*  adj-**R2** có thể giảm nếu mô hình có nhiều biến độc lập không giải thích được sự biến động của biến phụ thuộc.
 
-  adj-**R^2**  là một cách điều chỉnh R^2 sao cho bạn có thể đánh giá được sự phù hợp của mô hình, đặc biệt là khi bạn làm việc với mô hình có nhiều biến độc lập.
+*  adj-**R^2**  là một cách điều chỉnh R^2 sao cho bạn có thể đánh giá được sự phù hợp của mô hình, đặc biệt là khi bạn làm việc với mô hình có nhiều biến độc lập.
 
 Ex : Nếu mô hình có 3 biến độc lập và R2=0.80 , nhưng khi thêm một biến không có ý nghĩa vào mô hình, adj-R^2  có thể giảm để phản ánh sự thay đổi không phù hợp với mô hình.
 
