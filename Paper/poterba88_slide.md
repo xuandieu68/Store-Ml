@@ -26,7 +26,7 @@ Poterba, 1988\
 * **Preliminary finding:**
      * Significant temporary components in stock prices are needed to explain these correlations
      * Temporary, cyclical changes in required returns or valuation bubbles may also contribute.
----
+
 
 # 2.  **Methodological Issues**
 **Goal:** Evaluate statistical power to detect *temporary deviations* from fundamentals.
@@ -41,7 +41,6 @@ Poterba, 1988\
 4. **Likelihood-Ratio Test:**
    * Theoretically most powerful (Neyman–Pearson)
 
----
 
 ## 2.2. Power calculations 
 
@@ -60,7 +59,6 @@ Poterba, 1988\
 **Implication:**
 Traditional tests may fail to detect mean reversion even when temporary component exists.
 
----
 
 # 3. Evidence of Mean Reversion
 
@@ -124,7 +122,7 @@ $$\mathbf{V R(k)} = \frac{\sigma_{k}^{2}/k}{\sigma_{1}^{2}/12} \quad \text{(1)}$
 * Mean reversion exists but weaker than market-level data
 * Transitory shocks explain **smaller portion** of firm-specific variance
   
----
+
 # 4. The Practical Importance of Temporary Components in Stock Prices
 
 * **Economic Significance**
