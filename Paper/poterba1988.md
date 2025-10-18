@@ -29,35 +29,32 @@ The paper evaluates different statistical tests for temporary price components
 ---
 
 # 3. Statistical Evidence on Regression Means
+Section 3 uses the variance ratio test to analyze the degree of regression to the mean in stock prices across four main data sets
+
 ## 3.1  NYSE Monthly Returns (1926-1985)
 Table 2 presents the Variance Ratios (VR) statistics for the NYSE's real returns and excess returns, calculated over different horizons (from 1 month to 96 months)
 * Short-Term Serial Correlation: The VRs at the short horizon (1 month) are less than 1 (0.764 and 0.785), implying a positive serial correlation in monthly returns
-* Confirms the finding of Fama and French (1988b) that both real and excess returns over long horizons exhibit negative serial correlation.
-
-* The null hypothesis of serial independence is rejected at the 0.08 level for value-weighted real returns and at the 0.005 level for equally weighted excess returns.
+ * Long-Term Series Correlation: VR declines sharply at longer horizons (especially after 60 months), indicating negative series correlation.
 * The regression average is more pronounced for equal-weighted returns than for value-weighted returns.
-* There is also evidence of positive autocorrelation at horizons shorter than one year
-  
+*  The null hypothesis of serial independence is rejected at the 0.08 level for value-weighted real returns and at the 0.005 level for equally weighted excess returns
 ---
 
 ## 3.2 US Historical Data (1871-1985)
-
-* For the period before 1925, excess returns show negative serial correlation at long horizons.
+Table 3 extends the analysis using longer historical data (from 1871) based on the Standard and Poor's–Cowles index
+* For the period before 1925, excess returns show negative serial correlation at long horizons,  indicating greater evidence of regression to the mean than for the post-1926 data.
 * For the entire 1871-1985 period, both real and excess returns show negative serial correlation at long lags, but the evidence for regression averaging is weaker than for monthly CRSP data after 1925
   
 ## 3.3 Equity Markets outside the United States
+next  presents Variance ratios for seventeen international stock markets, allowing for a robustness check of regression to the mean.
 *  Study of data from Canada (since 1919), Britain (since 1939) and 15 other countries after World War II.
 *  Most countries show negative serial correlations at long horizons and positive serial correlations at short horizons.
 * The similarity of the results across countries reinforces the finding of significant temporary price components.
   
 ## 3.4 Individual Company Data (United States, post-1926)
-* The results show some long-run regression averages for individual stock prices relative to the general market or a risk-free asset.
+
+* The results for Individual Company Data set show some long-run regression averages for individual stock prices relative to the general market or a risk-free asset.
 * However, temporary factors account for a smaller portion of the relative return variation of individual stocks than of the overall market.
   
-## 3.5 Overall Summary
-* Point estimates show that return variance increases less than proportionally with time at long horizons, implying more regression averaging.
-* The results rejecting the hypothesis of serial independence at the 0.15 level are appropriate, considering the trade-off between test size and power.
-* Evidence from different data sets together strengthens the argument against the validity of the random walk model. The regression average is more pronounced in less extensive and sophisticated equity markets
 ---
  
 # 4. The Practical Importance of Temporary Components in Stock Prices
@@ -69,7 +66,7 @@ Table 2 presents the Variance Ratios (VR) statistics for the NYSE's real returns
 ---
   
 # 5. The Origin of the Temporary(transitory) Component in Stock Prices
-* **Significance:** The temporary components in stock prices imply volatility in expected returns (ex ante returns).
+* Section 5 discusses whether the volatility in ex ante returns (implied by the temporary component) is better explained by changes in interest rates/risk volatility or is a by-product of noise trading.
 * **Two views:** The central issue is whether the variation in expected returns is better explained by changes in interest rates and market volatility, or is a by-product of noise trading activity.
 * **Difficulty in explaining by interest rate changes:**
     - **Large volatility:** There needs to be significant volatility in the required rate of return to explain the price regression meanFor example, to explain price "fads" with a standard deviation of 20%, the standard deviation of expected returns must be 5.8% per year, even if return shocks require a half-life of 2.9 years.. These estimates are very large compared to average excess returns and are difficult to explain by known risk factors..
