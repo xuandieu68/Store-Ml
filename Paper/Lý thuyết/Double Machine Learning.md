@@ -18,13 +18,10 @@ Trong kinh tế lượng, khi ta muốn **ước lượng tác động nhân qu�
 ## 🧩 2. Cấu trúc cơ bản của DML
 
 Giả sử ta có mô hình nhân quả:
-[
 Y = \theta D + g(X) + \varepsilon
-]
+
 và ( D ) phụ thuộc vào ( X ):
-[
-D = m(X) + \nu
-]
+[D = m(X) + \nu]
 
 Trong đó:
 
@@ -137,194 +134,71 @@ print("Causal effect (theta):", dml_plr.coef)
 | Lợi ích  | Giảm bias, vẫn cho phép dùng mô hình phi tuyến                            |
 | Hạn chế  | Cần nhiều dữ liệu, không tự động kiểm tra giả định nhân quả               |
 
+
+
 ---
-````python
-import pandas as pd
-import numpy as np
-import shap
-import statsmodels.api as sm
-import matplotlib.pyplot as plt
 
-from doubleml import DoubleMLData, DoubleMLPLR
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.linear_model import LassoCV, RidgeCV
-from sklearn.model_selection import train_test_split
+## 🔹 1. Ý nghĩa của (g(X)) và (m(X))
 
-# Optional: for gradient boosting
-from xgboost import XGBRegressor
-from lightgbm import LGBMRegressor
+* g(X) : mô tả **mối quan hệ phi tuyến giữa biến kiểm soát (X)** và outcome (Y).
+  → Ví dụ: firm value có thể phi tuyến với firm size hoặc profitability.
 
-class DMLUtilityPro:
-    def __init__(self, data, y_col, d_col, x_cols,
-                 model_name='rf', n_folds=5, random_state=42,
-                 ml_g=None, ml_m=None):
-        """
-        Double Machine Learning Utility Class (Pro version)
-        ----------------------------------------------------
-        Cho phép linh hoạt chọn ML model và phân tích SHAP.
-        """
-
-        self.data = data.copy()
-        self.y_col = y_col
-        self.d_col = d_col
-        self.x_cols = x_cols
-        self.n_folds = n_folds
-        self.random_state = random_state
-        self.model_name = model_name.lower()
-        self.results = {}
-
-        # === chọn model ===
-        self.ml_g = ml_g or self._get_model()
-        self.ml_m = ml_m or self._get_model()
-
-        # === chuẩn bị dữ liệu cho DML ===
-        self.dml_data = DoubleMLData(self.data, y_col=y_col,
-                                     d_cols=d_col, x_cols=x_cols)
-        self.dml_model = None
-        self.ols_model = None
-
-    # ===========================================================
-    # Model selector
-    # ===========================================================
-    def _get_model(self):
-        """Chọn model theo tên"""
-        if self.model_name == 'rf':
-            return RandomForestRegressor(
-                n_estimators=300, max_depth=6, random_state=self.random_state)
-        elif self.model_name == 'xgb':
-            return XGBRegressor(
-                n_estimators=300, learning_rate=0.05,
-                max_depth=6, subsample=0.8, colsample_bytree=0.8,
-                random_state=self.random_state)
-        elif self.model_name == 'lgbm':
-            return LGBMRegressor(
-                n_estimators=300, learning_rate=0.05,
-                max_depth=-1, random_state=self.random_state)
-        elif self.model_name == 'lasso':
-            return LassoCV(cv=5, random_state=self.random_state)
-        elif self.model_name == 'ridge':
-            return RidgeCV(cv=5)
-        else:
-            raise ValueError(f"Model '{self.model_name}' không được hỗ trợ.")
-
-    # ===========================================================
-    # FIT DML
-    # ===========================================================
-    def fit_dml(self):
-        """Huấn luyện Double Machine Learning"""
-        self.dml_model = DoubleMLPLR(self.dml_data, self.ml_g, self.ml_m,
-                                     n_folds=self.n_folds)
-        self.dml_model.fit()
-
-        coef = self.dml_model.coef[0]
-        se = self.dml_model.se[0]
-        tval = coef / se
-        pval = 2 * (1 - sm.stats.norm.cdf(abs(tval)))
-
-        self.results['DML'] = {
-            'coef': coef,
-            'se': se,
-            't': tval,
-            'p': pval
-        }
-        return self.results['DML']
-
-    # ===========================================================
-    # FIT OLS
-    # ===========================================================
-    def fit_ols(self):
-        """Hồi quy OLS để so sánh"""
-        X = self.data[[self.d_col] + self.x_cols]
-        X = sm.add_constant(X)
-        y = self.data[self.y_col]
-        ols = sm.OLS(y, X).fit()
-
-        self.results['OLS'] = {
-            'coef': ols.params[self.d_col],
-            'se': ols.bse[self.d_col],
-            't': ols.tvalues[self.d_col],
-            'p': ols.pvalues[self.d_col],
-            'r2': ols.rsquared
-        }
-        self.ols_model = ols
-        return self.results['OLS']
-
-    # ===========================================================
-    # COMPARE
-    # ===========================================================
-    def compare(self, round_digits=4):
-        """So sánh DML vs OLS"""
-        if 'DML' not in self.results:
-            self.fit_dml()
-        if 'OLS' not in self.results:
-            self.fit_ols()
-
-        comp = pd.DataFrame([
-            {
-                'Model': 'OLS',
-                'Coef': self.results['OLS']['coef'],
-                'SE': self.results['OLS']['se'],
-                't': self.results['OLS']['t'],
-                'p': self.results['OLS']['p'],
-                'R2': self.results['OLS']['r2']
-            },
-            {
-                'Model': 'DML',
-                'Coef': self.results['DML']['coef'],
-                'SE': self.results['DML']['se'],
-                't': self.results['DML']['t'],
-                'p': self.results['DML']['p'],
-                'R2': np.nan
-            }
-        ])
-        return comp.round(round_digits)
-
-    # ===========================================================
-    # SHAP Analysis
-    # ===========================================================
-    def shap_analysis(self, mode='g', max_display=10):
-        """
-        Phân tích SHAP cho g(X) hoặc m(X).
-        mode = 'g' => Y ~ X
-        mode = 'm' => D ~ X
-        """
-        if mode not in ['g', 'm']:
-            raise ValueError("mode phải là 'g' hoặc 'm'.")
-
-        # chọn model và target
-        target = self.y_col if mode == 'g' else self.d_col
-        model = self.ml_g if mode == 'g' else self.ml_m
-
-        X = self.data[self.x_cols]
-        y = self.data[target]
-
-        # fit model (vì DoubleML không lưu trực tiếp estimator)
-        model.fit(X, y)
-
-        explainer = shap.Explainer(model, X)
-        shap_values = explainer(X)
-
-        title = f"SHAP Summary for {'g(X): Y~X' if mode=='g' else 'm(X): D~X'} ({self.model_name})"
-        shap.summary_plot(shap_values, X, max_display=max_display, show=False)
-        plt.title(title)
-        plt.tight_layout()
-        plt.show()
-
-    # ===========================================================
-    # SUMMARY
-    # ===========================================================
-    def summary(self):
-        print("="*65)
-        print(f"Double Machine Learning Summary ({self.model_name.upper()})")
-        print("="*65)
-        print(self.compare())
-        print("\nNotes:")
-        print("- DML: học phi tuyến g(X), m(X) bằng ML.")
-        print("- OLS: giả định tuyến tính hoàn toàn.")
-        print("- SHAP: giúp giải thích hàm g(X) và m(X).")
-        print("="*65)
+*  m(X) : mô tả **cách biến xử lý (D)** (ví dụ leverage) **phụ thuộc vào các biến kiểm soát (X)**.
+  → Ví dụ: leverage bị ảnh hưởng bởi size, tangibility, liquidity, v.v.
+---
 
 
+## 🔹 3. Vậy chọn mô hình nào cho (g(X)) và (m(X))?
 
-   
-````
+Phụ thuộc vào **đặc trưng dữ liệu** và **mức độ phi tuyến**. Dưới đây là bảng hướng dẫn:
+
+| Tình huống dữ liệu              | Gợi ý mô hình cho (g(X)), (m(X))  | Đặc điểm                          |
+| ------------------------------- | --------------------------------- | --------------------------------- |
+| Dữ liệu nhỏ (n < 2000)          | Lasso / Ridge                     | Giữ đơn giản, dễ diễn giải        |
+| Dữ liệu trung bình (2000–10000) | Random Forest / Gradient Boosting | Học được quan hệ phi tuyến mượt   |
+| Dữ liệu lớn (≥ 10000)           | XGBoost / LightGBM / Neural Net   | Bắt tương tác mạnh, hiệu suất cao |
+| Muốn giải thích được            | Lasso hoặc RandomForest + SHAP    | Xem được biến nào quan trọng      |
+
+👉 Thực tế, **Random Forest** là lựa chọn rất phổ biến trong nghiên cứu tài chính khi dùng DML, vì:
+
+* không cần tuning nhiều,
+* ổn định với nhiễu,
+* cho phép phi tuyến và tương tác bậc cao.
+
+---
+
+## 🔹 4. Cách kiểm tra xem g(X), m(X) có hợp lý không
+
+DML không yêu cầu bạn phải biết chính xác hàm (g) hay (m), nhưng bạn **có thể kiểm tra tính hợp lý** của ước lượng bằng:
+
+1. **Performance check**
+
+   * Kiểm tra (R^2) của mô hình (Y \sim X) và (D \sim X):
+     Nếu (R^2) quá thấp → (X) không giải thích được (Y) hoặc (D) → phần causal có thể bị nhiễu.
+
+2. **Variable importance / SHAP values**
+
+   * Kiểm tra xem biến nào ảnh hưởng mạnh đến (Y) và (D).
+     Nếu biến chính như size, profitability có trọng số cao → mô hình học hợp lý.
+
+3. **Cross-validation error**
+
+   * Dùng cross-fitting hoặc k-fold CV để đảm bảo không overfit.
+
+---
+
+## 🔹 5. Diễn giải trực giác
+
+
+* (g(X)): mọi yếu tố khác ảnh hưởng đến firm value như size, growth, profitability, industry, year,...
+* (m(X)): mọi yếu tố ảnh hưởng đến leverage như tangibility, liquidity, profitability,...
+
+Nếu không loại bỏ phần (g(X)) và (m(X)), ta sẽ **lẫn lộn giữa correlation và causation**, vì leverage bị ảnh hưởng bởi chính những biến cũng ảnh hưởng đến firm value.
+
+DML dùng ML để **học tự động** hai mối quan hệ này và loại bỏ chúng ra trước khi ước lượng hiệu ứng thật của leverage lên firm value.
+Kết quả sau khi fit() mô hình sẽ trả về coef của biến độc lập sau khi loại bỏ phần phi tuyến trong g(X) 
+---
+
+
+---
+
