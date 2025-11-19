@@ -6,13 +6,14 @@ SHAP
 **SHAP (SHapley Additive exPlanations)** là một phương pháp dựa trên **lý thuyết trò chơi Shapley**.
 Nó tính xem **mỗi biến (feature)** đóng góp **bao nhiêu vào dự đoán của từng quan sát**.
 * SHAP tính toán mức độ mỗi đặc trưng (feature) đóng góp vào dự đoán của mô hình. Kỹ thuật này được thiết kế để phân bổ một cách công bằng sự đóng góp của mỗi đặc trưng vào kết quả dự đoán cuối cùng
-Cụ thể:
-[
-\text{Prediction} = E[\text{model output}] + \sum_i \text{SHAP value}_i
-]
 
-* (E[\text{model output}]): giá trị trung bình của mô hình.
-* (\text{SHAP value}_i): đóng góp của biến (i) vào việc đẩy dự đoán lên hoặc xuống.
+Cụ thể:
+
+$$\text{Prediction} = E[\text{model output}] + \sum_i \text{SHAP value}_i$$
+
+
+* $$(E[\text{model output}])$$: giá trị trung bình của mô hình.
+* $$(\text{SHAP value}_i)$$: đóng góp của biến (i) vào việc đẩy dự đoán lên hoặc xuống.
 
 ✅ SHAP **không giả định mô hình tuyến tính**, mà hoạt động với **mọi loại mô hình** (XGBoost, Random Forest, Neural Network...).
 Do đó, nó là **công cụ giải thích phi tuyến tốt nhất hiện nay**.
