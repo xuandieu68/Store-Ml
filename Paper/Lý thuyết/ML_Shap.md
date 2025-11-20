@@ -1,4 +1,90 @@
-SHAP
+
+
+### I. Các Mô hình Học Máy Cơ bản và Mô hình Tuyến tính
+
+#### 1. Lasso (Least Absolute Shrinkage and Selection Operator)
+Lasso là một phương pháp hữu hiệu để **thu hẹp các tham số** liên quan đến các biến đồng phương sai (covariate) không đáng kể về 0.
+
+*   **Chức năng:** Lasso hoạt động như một công cụ **co rút (shrinkage) và chọn lọc mô hình (model selection)**.
+*   **Đặc điểm:** Nó tạo ra một phiên bản thưa (sparse version) của mô hình hồi quy đa biến tiêu chuẩn.
+*   **Mục đích:** Lasso giúp giảm thiểu hiện tượng quá khớp (overfitting) và vấn đề đa cộng tuyến (multicollinearities) khi có một tập hợp lớn các biến dự đoán. Nó cũng được sử dụng để **chọn lọc các biến quan trọng nhất**.
+*   **Bản chất:** Lasso là một mô hình **tuyến tính**.
+*   **Nguyên tắc:** Phương pháp này sử dụng số hạng phạt L1: $\frac{1}{2n} \|\mathbf{y} - \mathbf{X}\beta\|_2^2 + \lambda \|\beta\|_1$. Lasso có xu hướng tạo ra một **giải pháp thưa** cho dữ liệu nhiễu hoặc chất lượng thấp.
+
+#### 2. Generalized Additive Model (GAM)
+GAM là một mô hình thuộc lớp các mô hình là biến thể của mô hình tuyến tính tiêu chuẩn.
+
+*   **Chức năng:** GAM có thể được sử dụng để ước tính **các mối quan hệ phi tuyến tính cao** giữa các biến đồng phương sai và biến phụ thuộc bằng cách sử dụng các hàm ước tính phi tham số thích hợp (chẳng hạn như splines).
+*   **Lưu ý:** GAM **không đo lường mức độ quan trọng của biến** (variable importance).
+
+#### 3. Support Vector Machines (SVM)
+SVM là một kỹ thuật học máy tiên tiến được áp dụng trong tài chính và kế toán.
+
+*   **Ứng dụng:** SVM đã cho thấy hiệu suất ngày càng quan trọng trong **phân tích chuỗi thời gian tài chính**.
+
+### II. Các Mô hình Dựa trên Cây và Tổ hợp (Ensemble Models)
+
+#### 1. Random Forest (RF)
+Random Forest là một trong những mô hình học máy phổ biến nhất, dựa trên cấu trúc cây quyết định.
+
+*   **Đặc điểm:** Đây là một mô hình **phi tuyến tính, không liên tục cao**.
+*   **Ưu điểm:** RF thường xuyên cho thấy **hiệu suất tốt nhất** trong việc nắm bắt các tương tác phi tuyến tính và tạo ra **các dự đoán chính xác hơn** (so với các mô hình tuyến tính).
+*   **Cơ sở:** RF là thuật toán dựa trên cây quyết định (Decision trees-based).
+
+#### 2. XGBoost (Extreme Gradient Boosting)
+XGBoost là một hệ thống tăng cường cây (tree boosting system) có khả năng mở rộng.
+
+*   **Đặc điểm:** Đây là một kỹ thuật học máy tiên tiến, được chọn vì **độ chính xác cao** và khả năng xử lý hiệu quả, nắm bắt các mẫu dữ liệu phức tạp.
+*   **Ưu điểm:** XGBoost vượt trội hơn các mô hình hồi quy tuyến tính truyền thống trong việc nắm bắt **các mối quan hệ phi tuyến tính** và cải thiện độ chính xác dự đoán.
+
+#### 3. Gradient Boosting Machine (GBM)
+GBM là một thuật toán dựa trên cây được thiết kế để tìm ra bộ khớp tối ưu dựa trên hàm mất mát (loss function).
+
+*   **Chức năng:** GBM cho phép mô hình hóa **các phi tuyến tính**.
+*   **Cơ sở:** GBM được mô tả là một thuật toán **dựa trên cây tuần tự**.
+
+### III. Các Mô hình Mạng Thần kinh (Neural Networks)
+
+#### 1. Neural Networks (NN / NNET) / Multilayer Perceptron (MLP)
+Mạng thần kinh nhân tạo (ANN hoặc NNET) là các kỹ thuật phân tích được **lấy cảm hứng từ sinh học** (tế bào thần kinh trong não người).
+
+*   **Cấu trúc:** Mạng thần kinh bao gồm **lớp đầu vào, lớp đầu ra và nhiều lớp ẩn**.
+*   **Khả năng:** NN có khả năng **mô hình hóa các hàm phi tuyến tính rất phức tạp**.
+*   **MLP:** Multilayer Perceptron là một mô hình mạng thần kinh nhân tạo **kết nối đầy đủ**. MLP được coi là **"bộ xấp xỉ phổ quát" (universal approximator)** — một khái niệm lý thuyết rằng một số ANN có thể xấp xỉ bất kỳ hàm liên tục nào trong một phạm vi xác định, dẫn đến các ánh xạ dự đoán trơn tru.
+*   **Đặc điểm NNET:** Trong khuôn khổ NNET, các biến dự đoán được đưa vào một lớp ẩn, lớp này biến đổi các biến dự đoán theo cách **phi tuyến tính và tương tác**.
+*   **Phân bổ Trọng số:** NNET có xu hướng **phân bổ tầm quan trọng của biến một cách đồng đều hơn** so với RF, GBM và Lasso.
+
+### IV. Các Mô hình Học Máy Nguyên nhân (Causal ML) Nâng cao
+
+#### 1. Double/Debiased Machine Learning (DML)
+DML là một phương pháp kinh tế lượng hiện đại được phát triển để ước tính **hiệu ứng nhân quả** của một biến mục tiêu.
+
+*   **Mục đích:** DML giải quyết **thiên vị biến bị bỏ sót (omitted variable bias)** của các mô hình kinh tế lượng truyền thống.
+*   **Cơ chế:** DML sử dụng **hai lần** các phương pháp học máy trong bước ước tính các hàm phiền phức (nuisance functions).
+*   **Ưu điểm:** DML tạo ra một ước tính **không thiên vị, gần như phân phối chuẩn và nhất quán** cho tham số quan tâm.
+*   **Khả năng:** Nó có thể kết hợp các phương pháp ML hiệu quả như GBM để tính toán **các cấu trúc phi tuyến tính** có thể có trong dữ liệu.
+
+#### 2. Causal Forest (CF)
+Causal Forest là một thuật toán được sử dụng để phân tích **tác động chi tiết (granular impact)** của một biến (ví dụ: chi phí cơ hội giữ tiền) lên một kết quả (ví dụ: tiền mặt nắm giữ).
+
+*   **Chức năng:** Thay vì chỉ xem xét một ước tính trung bình cho toàn bộ dân số, CF cho phép điều tra **độ nhạy ở cấp độ công ty** (ước tính cá nhân hóa).
+*   **Cơ sở:** Phương pháp này dựa trên ý tưởng về **hiệu ứng xử lý trung bình có điều kiện (conditional average treatment effect)**.
+*   **Ứng dụng:** CF đặc biệt hữu ích để làm sáng tỏ **các phát hiện thực nghiệm mâu thuẫn**.
+
+| Mô hình | Lớp Mô hình | Đặc điểm Nổi bật |
+| :--- | :--- | :--- |
+| **Lasso** | Tuyến tính/Co rút | Chọn lọc biến; Co rút tham số về 0; Tạo giải pháp thưa. |
+| **MLP/NNET** | Mạng thần kinh | Mô hình phi tuyến phức tạp; "Bộ xấp xỉ phổ quát"; Sử dụng lan truyền ngược. |
+| **RF** | Dựa trên cây/Ensemble | Phi tuyến tính, không liên tục cao; Thường có hiệu suất dự đoán tốt nhất. |
+| **XGBoost/GBM** | Dựa trên cây/Ensemble | Hệ thống tăng cường cây có khả năng mở rộng; Nắm bắt các mối quan hệ phi tuyến tính. |
+| **DML** | Học máy nhân quả | Ước tính hiệu ứng nhân quả; Giải quyết thiên vị biến bị bỏ sót; Sử dụng ML hai lần. |
+| **CF** | Học máy nhân quả | Ước tính tác động chi tiết (cấp độ công ty); Phát hiện tính không đồng nhất của hiệu ứng. |
+
+Giống như việc lắp ráp một chiếc kính hiển vi phức tạp, các mô hình học máy (ML) tiên tiến như DML hay Causal Forest không chỉ giúp chúng ta nhìn thấy bức tranh tổng thể (như hồi quy tuyến tính truyền thống) mà còn cho phép phân tích chi tiết từng hạt bụi (tác động cá nhân hóa) và loại bỏ được các vết bẩn (thiên vị do biến bị bỏ sót) để có được cái nhìn sắc nét và chính xác hơn về mối quan hệ nhân quả trong dữ liệu tài chính.
+
+
+
+# SHAP
 ---
 
 ## 🔹 1. Trước hết: SHAP là gì?
