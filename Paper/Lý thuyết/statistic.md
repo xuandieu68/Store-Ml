@@ -1,4 +1,80 @@
-Mô hình hồi quy OLS cơ bản : Y = alpha + βX + ...+ ϵ
+
+**Kiểm định nội sinh (Endogeneity test)** là một bước quan trọng trong kinh tế lượng nhằm xác định **biến giải thích (X)** trong mô hình hồi quy có **tương quan với sai số (ε)** hay không. Nếu có, X được gọi là **nội sinh (endogenous)** – điều này làm cho ước lượng OLS **bị chệch (biased)** và **không nhất quán (inconsistent)**.
+
+---
+
+# 🔍 **1. Nội sinh là gì?**
+
+Một biến giải thích là **nội sinh** khi:
+
+* Nó bị **bỏ sót biến quan trọng** (omitted variable bias)
+* Nó **cùng chiều với sai số** (ví dụ: Y ảnh hưởng ngược lại X → quan hệ hai chiều)
+* Nó bị **đo lường sai (measurement error)**
+* Bị ảnh hưởng bởi **vấn đề chọn mẫu (sample selection)**
+
+
+# 🧪 **2. Kiểm định nội sinh để làm gì?**
+
+Để trả lời câu hỏi:
+
+> **Trong mô hình hồi quy, biến X có bị nội sinh hay không? OLS có còn tin cậy không?**
+
+Nếu **có nội sinh → cần IV/2SLS, GMM…**
+Nếu **không có nội sinh → OLS vẫn dùng được.**
+
+
+# 🔧 **3. Những kiểm định nội sinh phổ biến**
+
+## **(1) Hausman Test**
+
+Dùng để kiểm tra xem OLS (không điều chỉnh nội sinh) và IV/2SLS (điều chỉnh nội sinh) khác nhau đáng kể hay không.
+
+* Nếu **p-value < 0.05 → biến X là nội sinh**
+* Nếu **p-value > 0.05 → không có nội sinh → OLS OK**
+
+Ý tưởng:
+Nếu không nội sinh, 2SLS và OLS đều **nhất quán** → giống nhau.
+Nếu nội sinh, chỉ 2SLS nhất quán → 2 cái khác nhau.
+
+## **(2) Durbin–Wu–Hausman (DWH)**
+
+Phiên bản mở rộng, kiểm tra thêm phần dư từ bước 1 của IV.
+
+
+## **(3) kiểm định dựa trên residual inclusion**
+
+Thêm phần dư từ hồi quy X~Z vào mô hình Y~X, nếu phần dư có ý nghĩa → X nội sinh.
+
+
+# 📌 **4. Vì sao cần kiểm định nội sinh?**
+
+Vì nội sinh **phá vỡ giả định Gauss–Markov**, dẫn đến:
+
+### ❌ OLS không còn BLUE
+
+### ❌ Hệ số sai → giải thích sai
+
+### ❌ Kiểm định t, F không còn chính xác
+
+### ❌ Kết luận chính sách bị sai
+
+Trong nghiên cứu tài chính (BE/ME, leverage, ESG…), nội sinh gần như **luôn tồn tại**.
+
+---
+
+# ⭐ **5. Khi nào nội sinh đặc biệt nghiêm trọng?**
+
+* Quan hệ hai chiều (Performance ↔ ESG)
+* Biến bị đo sai (Firm value, intangible assets)
+* Thiếu biến quan trọng (manager ability)
+* Selection bias (survivorship bias trong stock data)
+
+Trong mô hình ML số lớn, nội sinh vẫn **ảnh hưởng diễn giải**, dù mô hình vẫn dự đoán tốt.
+
+--- 
+
+# Mô hình hồi quy OLS cơ bản : 
+$$Y = alpha + βX + ...+ ϵ$$
 
 Alpha là hệ số chặn (intercept)
 
