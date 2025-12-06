@@ -56,7 +56,107 @@ Mục tiêu chính của bài nghiên cứu là đánh giá các lời giải th
     *   Bằng chứng đảo chiều lợi suất **yếu hơn đáng kể** trong giai đoạn sau (1982–1998), mặc dù lợi nhuận đà trong giai đoạn nắm giữ vẫn mạnh mẽ,,.
 *   Các kết quả này cho thấy các mô hình hành vi chỉ cung cấp **giải thích một phần** cho bất thường đà.
 
+---
 
+Dưới đây là mô tả phương pháp và kết quả cụ thể của từng bảng (Table) được đề cập trong bài nghiên cứu "Profitability of Momentum Strategies: An Evaluation of Alternative Explanations" của Jegadeesh và Titman (2001):
+
+### Table I: Momentum Portfolio Returns (Lợi suất Danh mục Đà)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Bảng này báo cáo lợi suất hàng tháng trung bình của 10 danh mục đà (P1: người thắng, P10: người thua), được hình thành dựa trên lợi suất sáu tháng trước (Tháng -5 đến Tháng 0) và nắm giữ trong sáu tháng (Tháng 1 đến Tháng 6),.
+*   **Mẫu:** Tất cả cổ phiếu giao dịch trên NYSE, AMEX, hoặc Nasdaq, loại trừ cổ phiếu có giá dưới $5 khi bắt đầu giai đoạn nắm giữ và cổ phiếu thuộc phân vị vốn hóa thị trường nhỏ nhất của NYSE.
+*   **Phân tích Chi tiết:** Lợi suất được báo cáo cho ba giai đoạn: 1965–1998 (Toàn bộ), 1965–1989 (Giai đoạn ban đầu) và 1990–1998 (Giai đoạn ngoài mẫu - out-of-sample).
+*   **Phân nhóm Quy mô:** Dữ liệu cũng được chia nhỏ thành cổ phiếu Vốn hóa Nhỏ (Small Cap) và Vốn hóa Lớn (Large Cap) dựa trên mức vốn hóa thị trường trung bình của NYSE để kiểm tra ảnh hưởng của chi phí giao dịch và sự học hỏi của nhà đầu tư,.
+
+**Kết quả Chính:**
+*   **Sự Bền bỉ (Persistence):** Chiến lược đà tiếp tục sinh lời trong giai đoạn ngoài mẫu 1990–1998. Lợi suất chênh lệch (P1-P10) là **1.39% mỗi tháng** trong giai đoạn 1990–1998, tương đương với mức 1.17% trong giai đoạn ban đầu 1965–1989,.
+*   **Nguồn Lợi nhuận:** Cả người thắng (P1) và người thua (P10) đều đóng góp gần như bằng nhau vào lợi nhuận đà, vì P1 vượt trội hơn chỉ số EWI (Equal-Weighted Index) và P10 kém hơn chỉ số này.
+*   **Phụ thuộc vào Quy mô:** Hiệu ứng đà **tiếp tục tồn tại** đối với cả cổ phiếu lớn và cổ phiếu nhỏ trong thập niên 1990, không hỗ trợ các dự đoán rằng lợi nhuận sẽ biến mất nhanh hơn đối với cổ phiếu lớn, vốn có chi phí giao dịch thấp hơn,.
+
+### Table II: Momentum Portfolio Returns in January and outside January (Lợi suất Danh mục Đà trong Tháng Giêng và ngoài Tháng Giêng)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Bảng này kiểm tra tính thời vụ (seasonality) của lợi nhuận đà, đặc biệt là hiện tượng lợi suất âm trong Tháng Giêng đã được ghi nhận trước đây.
+*   **Mô tả:** Báo cáo lợi suất trung bình hàng tháng của danh mục chênh lệch P1-P10, thống kê t, và tỷ lệ phần trăm tháng có lợi nhuận dương, chia nhỏ cho Tháng Giêng (Jan) và các tháng còn lại (Feb-Dec).
+*   **Giai đoạn:** Báo cáo cho các giai đoạn 1965–1989, 1990–1998 và 1965–1998.
+
+**Kết quả Chính:**
+*   **Tính Thời vụ Bền bỉ:** Lợi nhuận đà trong Tháng Giêng là **âm** trong tất cả các giai đoạn được kiểm tra, cho thấy tính thời vụ này không phải là ngẫu nhiên thống kê,.
+*   **Ảnh hưởng của Cổ phiếu nhỏ/Giá thấp:** Khi loại trừ các cổ phiếu nhỏ và giá thấp (theo tiêu chí mẫu chuẩn của nghiên cứu), lợi nhuận đà âm trong Tháng Giêng chỉ còn **ý nghĩa biên (marginally significant)**. Điều này gợi ý rằng hầu hết lợi nhuận âm trong Tháng Giêng trước đây là do các cổ phiếu nhỏ và giá thấp, vốn khó giao dịch theo giá CRSP được báo cáo.
+*   **Sự Khác biệt Lớn:** Lợi nhuận đà trong Tháng Giêng nhỏ hơn đáng kể so với lợi nhuận đà trong các tháng còn lại,.
+
+### Table III: Portfolio Characteristics (Đặc điểm Danh mục)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Bảng này báo cáo các đặc điểm của 10 danh mục đà (P1 đến P10) và danh mục chênh lệch P1-P10, tập trung vào **đặc điểm quy mô** và **độ nhạy cảm rủi ro** đối với Mô hình Ba yếu tố Fama-French,.
+*   **Đặc điểm Báo cáo:**
+    *   **Hạng Quy mô (Average Size Decile Rank):** Hạng trung bình của vốn hóa thị trường dựa trên điểm cắt decile của NYSE.
+    *   **Độ nhạy cảm Yếu tố Fama-French (FF Factor Sensitivities):** Các hệ số dốc (slope coefficients) trong hồi quy chuỗi thời gian của Mô hình Ba yếu tố (Market, SMB, HML).
+
+**Kết quả Chính:**
+*   **Quy mô:** Cả người thắng (P1) và người thua (P10) đều có xu hướng là **các công ty nhỏ hơn** so với cổ phiếu trung bình, mặc dù P1 có hạng quy mô trung bình lớn hơn P10,.
+*   **Market Beta:** Hệ số beta thị trường (Market) cho P1 (1.08) và P10 (1.12) là **gần như bằng nhau**,.
+*   **Rủi ro Quy mô (SMB) và Giá trị (HML):** Người thua (P10) được coi là **rủi ro hơn** vì chúng nhạy cảm hơn đối với cả yếu tố quy mô (SMB loading: P10 là 0.55 so với P1 là 0.41) và yếu tố giá trị (HML loading: P1 là -0.245, cổ phiếu tăng trưởng, trong khi P10 là -0.02, gần như trung lập),,.
+
+### Table IV: CAPM and Fama-French Alphas (Alpha CAPM và Fama-French)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Báo cáo lợi suất được điều chỉnh rủi ro (risk-adjusted returns) cho 10 danh mục đà và danh mục chênh lệch P1-P10, sử dụng cả Alpha Mô hình Định giá Tài sản Vốn (CAPM Alpha) và **Alpha Fama-French (FF Alpha)**.
+*   **Phương pháp:** Alpha là hệ số chặn (intercept) từ hồi quy lợi suất hàng tháng (trừ lãi suất phi rủi ro) lên lợi suất chỉ số thị trường (đối với CAPM Alpha) và lên ba yếu tố Fama-French (đối với FF Alpha),.
+
+**Kết quả Chính:**
+*   **CAPM Alpha:** Alpha CAPM cho danh mục chênh lệch P1-P10 (1.24%) gần bằng lợi suất thô (1.23%), do cả hai danh mục có beta thị trường gần như bằng nhau,.
+*   **FF Alpha:** FF Alpha cho danh mục chênh lệch P1-P10 là **1.36%** (t-statistic 7.04), lớn hơn lợi suất thô,.
+*   **Hàm ý Rủi ro:** Alpha dương và có ý nghĩa thống kê này chỉ ra rằng lợi nhuận đà **không phải là sự bù đắp cho rủi ro** theo Mô hình Ba yếu tố Fama-French. Sự khác biệt này xảy ra vì người thua (P10) nhạy cảm hơn với các yếu tố Fama-French (SMB và HML), và việc điều chỉnh rủi ro này làm cho lợi nhuận bất thường (Alpha) của chiến lược chênh lệch tăng lên.
+
+### Table V: Seasonality in Longer Horizon Momentum Profits and Fama and French Factors (Tính Thời vụ trong Lợi nhuận Đà Dài hạn và các Yếu tố Fama-French)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Phân tích lợi suất và Alpha của chiến lược đà trong thời gian dài (lên đến 5 năm) sau khi thành lập danh mục (Tháng 1 đến Tháng 60), để kiểm tra các giả thuyết hành vi (dự đoán đảo chiều) và Conrad và Kaul (dự đoán lợi nhuận dương),,.
+*   **Panel A:** Báo cáo lợi suất trung bình hàng tháng của ba yếu tố rủi ro Fama-French (Market, SMB, HML) trong Tháng Giêng và ngoài Tháng Giêng,.
+*   **Panel B (Raw Returns):** Báo cáo lợi suất thô trung bình hàng tháng của danh mục chênh lệch P1-P10 trong các khoảng thời gian một năm (Months 1–12, 13–24, 25–36, 37–48, 49–60) và toàn bộ giai đoạn sau nắm giữ (Months 13–60), phân chia theo Tháng Giêng và ngoài Tháng Giêng.
+*   **Panel C (FF Alphas):** Báo cáo Alpha Fama-French cho danh mục người thắng (P1), người thua (P10) và danh mục chênh lệch (P1-P10) trong cùng các khoảng thời gian trên,.
+
+**Kết quả Chính:**
+*   **Đảo chiều Dài hạn (Raw Returns):** Lợi nhuận thô trung bình trong giai đoạn 13 đến 60 tháng là **-0.26% mỗi tháng**, nhất quán với các mô hình hành vi (phản ứng thái quá bị trì hoãn dẫn đến đảo chiều) và **bác bỏ** giả thuyết Conrad và Kaul,,.
+*   **Tính Thời vụ trong Dài hạn:** Lợi nhuận âm kéo dài này **tập trung đáng kể trong Tháng Giêng** trong suốt 5 năm, với lợi nhuận Tháng Giêng trung bình là **-1.36%** mỗi tháng trong giai đoạn 13–60 tháng,.
+*   **FF Alpha Dài hạn:** Alpha Fama-French trong giai đoạn 13 đến 60 tháng là **-0.14%**.
+*   **Nguồn gốc của Đảo chiều:** Sự đảo chiều rủi ro được điều chỉnh này **hoàn toàn là do Alpha âm của danh mục người thắng (P1)** (**-0.17%** mỗi tháng), trong khi Alpha của người thua P10 gần như bằng không trong cùng giai đoạn đó. Điều này không nhất quán với ý tưởng rằng đà của người thua là do giao dịch phản hồi tích cực tạo ra và sau đó đảo ngược.
+
+### Table VI: Longer Horizons Momentum Profits and Fama and French Factors—Subperiod Results (Lợi nhuận Đà Dài hạn và các Yếu tố Fama-French—Kết quả theo Giai đoạn con)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Kiểm tra tính mạnh mẽ của hiện tượng đảo chiều dài hạn bằng cách chia mẫu thời gian thành hai giai đoạn con (subperiods) có độ dài gần bằng nhau: **1965–1981** và **1982–1998**,.
+*   **Panel A:** Báo cáo lợi suất trung bình của các yếu tố Fama-French trong hai giai đoạn.
+*   **Panel B & C:** Báo cáo lợi suất thô và FF Alpha của danh mục chênh lệch P1-P10 cho giai đoạn nắm giữ (1–12 tháng) và giai đoạn sau nắm giữ (13–60 tháng) trong từng giai đoạn con,.
+
+**Kết quả Chính:**
+*   **Đà Gần (1–12 tháng):** Lợi nhuận đà trong giai đoạn nắm giữ là **tương đương nhau** và đáng kể trong cả hai giai đoạn con (lợi suất thô khoảng 1.01%–1.02% mỗi tháng),.
+*   **Đảo chiều Dài hạn Không Ổn định:** Bằng chứng đảo chiều lợi suất (lợi suất thô và Alpha âm) **mạnh mẽ hơn đáng kể** trong giai đoạn đầu (1965–1981) so với giai đoạn sau (1982–1998),.
+    *   **1965–1981:** Lợi suất thô 13–60 tháng là **-0.38%** (FF Alpha là **-0.19%**),.
+    *   **1982–1998:** Lợi suất thô 13–60 tháng chỉ là **-0.13%** (FF Alpha chỉ là **-0.08%**),.
+
+### Table VII: Long Horizon Momentum Profits for Large Firms (Lợi nhuận Đà Dài hạn cho Công ty Lớn)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Kiểm tra lợi nhuận đà và sự đảo chiều dài hạn cho mẫu **cổ phiếu lớn** (vốn hóa thị trường lớn hơn mức trung bình của NYSE),.
+*   **Panel A & B:** Báo cáo lợi suất thô và FF Alpha cho các khoảng thời gian nắm giữ và sau nắm giữ, chia theo hai giai đoạn con,.
+
+**Kết quả Chính:**
+*   **Đảo chiều Yếu (Raw Returns):** Cổ phiếu lớn cho thấy bằng chứng đảo chiều lợi suất thô (Panel A),.
+*   **Alpha Không Đáng kể:** FF Alpha cho cổ phiếu lớn trong giai đoạn sau nắm giữ (13–60 tháng) là **-0.07% mỗi tháng** và **không có ý nghĩa thống kê**,.
+*   **Thiếu Ổn định:** Bằng chứng đảo chiều Alpha (Panel B) chủ yếu chỉ xảy ra trong giai đoạn đầu (1965–1981). Trong giai đoạn sau (1982–1998), FF Alpha trung bình chỉ là **-0.01% mỗi tháng**, cho thấy sự biến mất của hiện tượng đảo chiều đối với cổ phiếu lớn trong những năm gần đây,.
+
+### Table VIII: Long Horizon Momentum Profits for Small Firms (Lợi nhuận Đà Dài hạn cho Công ty Nhỏ)
+
+**Phương pháp Cụ thể:**
+*   **Mục đích:** Kiểm tra lợi nhuận đà và sự đảo chiều dài hạn cho mẫu **cổ phiếu nhỏ** (vốn hóa thị trường nhỏ hơn mức trung bình của NYSE, nhưng loại trừ decile nhỏ nhất),.
+*   **Panel A & B:** Báo cáo lợi suất thô và FF Alpha cho các khoảng thời gian nắm giữ và sau nắm giữ, chia theo hai giai đoạn con,.
+
+**Kết quả Chính:**
+*   **Đảo chiều Mạnh hơn:** Cổ phiếu nhỏ cho thấy bằng chứng đảo chiều lợi suất dài hạn **mạnh mẽ hơn** so với cổ phiếu lớn, với FF Alpha trong giai đoạn 13–60 tháng là **-0.18%**,.
+*   **Phụ thuộc Giai đoạn:** Tương tự như kết quả toàn bộ mẫu, bằng chứng đảo chiều vẫn **mạnh mẽ hơn đáng kể** trong giai đoạn đầu (1965–1981) so với giai đoạn sau (1982–1998),.
+  
 ---
 
 | Thuật ngữ (Tiếng Anh) | Khái niệm (Tiếng Việt) |
