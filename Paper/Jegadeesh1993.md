@@ -158,25 +158,25 @@ Trong đó:
 *   $r_{mt}$: Lợi suất của chỉ số trọng số giá trị CRSP (CRSP Value-Weighted Index), được sử dụng làm đại diện cho thị trường.
 ### A. Các Chiến lược Giao dịch và Danh mục Đầu tư
 
-| Thuật ngữ | Khái niệm/Giải thích | Nguồn |
-| :--- | :--- | :--- |
-| **Relative Strength Strategies** (Chiến lược Sức mạnh Tương đối) | Chiến lược **mua cổ phiếu có hiệu suất tốt trong quá khứ (winners)** và **bán cổ phiếu có hiệu suất kém trong quá khứ (losers)**. Nhiều nhà thực hành sử dụng chiến lược này, thường dựa trên biến động giá trong 3 đến 12 tháng trước. | |
-| **Winners (Người thắng)** | Danh mục phân vị (decile portfolio) bao gồm các cổ phiếu có lợi suất cao nhất trong thời kỳ hình thành danh mục trước đó. Danh mục này được mua trong chiến lược sức mạnh tương đối. | |
-| **Losers (Người thua)** | Danh mục phân vị bao gồm các cổ phiếu có lợi suất thấp nhất trong thời kỳ hình thành danh mục trước đó. Danh mục này được bán (shorted) trong chiến lược sức mạnh tương đối. | |
-| **Zero-cost portfolio (Danh mục chi phí bằng không)** | Danh mục được xây dựng bằng cách **mua danh mục người thắng trừ đi bán danh mục người thua** (winners minus losers). | |
-| **Contrarian Strategies** (Chiến lược Đối lập) | Chiến lược **mua người thua trong quá khứ và bán người thắng trong quá khứ**. Chiến lược này được đề xuất là đạt được lợi nhuận bất thường trong dài hạn (3 đến 5 năm) do nhà đầu tư phản ứng thái quá. | |
-| **J-month/K-month strategy** (Chiến lược J-tháng/K-tháng) | Chiến lược chọn cổ phiếu dựa trên lợi suất trong $J$ tháng trước và nắm giữ chúng trong $K$ tháng. | |
-| **Holding periods** (Thời kỳ nắm giữ) | Khoảng thời gian mà các vị thế mua/bán được duy trì, dao động từ 3 đến 12 tháng trong nghiên cứu này. | |
-| **Portfolio formation** (Thành lập danh mục đầu tư) | Quá trình xếp hạng chứng khoán dựa trên lợi suất trong quá khứ (ví dụ: $J$ tháng trước) và hình thành các danh mục phân vị (decile portfolios). | |
-| **Buy and hold strategy** (Chiến lược Mua và Nắm giữ) | Chiến lược giữ vị thế đã mua trong suốt thời gian nắm giữ, trái ngược với chiến lược tái cân bằng hàng tháng. | |
-| **Weighted relative strength strategy (WRSS)** (Chiến lược Sức mạnh Tương đối có Trọng số) | Chiến lược chi phí bằng không, trong đó cổ phiếu được trọng số bằng lợi suất quá khứ của chúng trừ đi lợi suất chỉ số trung bình bằng nhau trong quá khứ. | |
-| **Turnover** (Doanh thu) | Tỷ lệ phần trăm chứng khoán trong danh mục được giao dịch (thay thế). | |
-| **Equally weighted portfolio** (Danh mục trọng số bằng nhau) | Danh mục trong đó tất cả các cổ phiếu được gán trọng số bằng nhau. | |
+| Thuật ngữ | Khái niệm/Giải thích |
+| :--- | :--- | 
+| **Relative Strength Strategies** (Chiến lược Sức mạnh Tương đối) | Chiến lược **mua cổ phiếu có hiệu suất tốt trong quá khứ (winners)** và **bán cổ phiếu có hiệu suất kém trong quá khứ (losers)**. Nhiều nhà thực hành sử dụng chiến lược này, thường dựa trên biến động giá trong 3 đến 12 tháng trước. | 
+| **Winners (Người thắng)** | Danh mục phân vị (decile portfolio) bao gồm các cổ phiếu có lợi suất cao nhất trong thời kỳ hình thành danh mục trước đó. Danh mục này được mua trong chiến lược sức mạnh tương đối. | 
+| **Losers (Người thua)** | Danh mục phân vị bao gồm các cổ phiếu có lợi suất thấp nhất trong thời kỳ hình thành danh mục trước đó. Danh mục này được bán (shorted) trong chiến lược sức mạnh tương đối. | 
+| **Zero-cost portfolio (Danh mục chi phí bằng không)** | Danh mục được xây dựng bằng cách **mua danh mục người thắng trừ đi bán danh mục người thua** (winners minus losers). | 
+| **Contrarian Strategies** (Chiến lược Đối lập) | Chiến lược **mua người thua trong quá khứ và bán người thắng trong quá khứ**. Chiến lược này được đề xuất là đạt được lợi nhuận bất thường trong dài hạn (3 đến 5 năm) do nhà đầu tư phản ứng thái quá. | 
+| **J-month/K-month strategy** (Chiến lược J-tháng/K-tháng) | Chiến lược chọn cổ phiếu dựa trên lợi suất trong $J$ tháng trước và nắm giữ chúng trong $K$ tháng. | 
+| **Holding periods** (Thời kỳ nắm giữ) | Khoảng thời gian mà các vị thế mua/bán được duy trì, dao động từ 3 đến 12 tháng trong nghiên cứu này. | 
+| **Portfolio formation** (Thành lập danh mục đầu tư) | Quá trình xếp hạng chứng khoán dựa trên lợi suất trong quá khứ (ví dụ: $J$ tháng trước) và hình thành các danh mục phân vị (decile portfolios). | 
+| **Buy and hold strategy** (Chiến lược Mua và Nắm giữ) | Chiến lược giữ vị thế đã mua trong suốt thời gian nắm giữ, trái ngược với chiến lược tái cân bằng hàng tháng. | 
+| **Weighted relative strength strategy (WRSS)** (Chiến lược Sức mạnh Tương đối có Trọng số) | Chiến lược chi phí bằng không, trong đó cổ phiếu được trọng số bằng lợi suất quá khứ của chúng trừ đi lợi suất chỉ số trung bình bằng nhau trong quá khứ. | 
+| **Turnover** (Doanh thu) | Tỷ lệ phần trăm chứng khoán trong danh mục được giao dịch (thay thế). | 
+| **Equally weighted portfolio** (Danh mục trọng số bằng nhau) | Danh mục trong đó tất cả các cổ phiếu được gán trọng số bằng nhau. | 
 
 ### B. Khái niệm về Hiệu quả Thị trường
 
-| Thuật ngữ | Khái niệm/Giải thích | Nguồn |
-| :--- | :--- | :--- |
+| Thuật ngữ | Khái niệm/Giải thích | 
+| :--- | :--- | 
 | **Abnormal Returns / Excess Returns** (Lợi nhuận Bất thường / Lợi suất Vượt trội) | Lợi nhuận vượt quá mức lợi nhuận dự kiến hoặc đã được điều chỉnh rủi ro, thường được ước tính bằng cách sử dụng hồi quy mô hình thị trường (Market Model Regression). | |
 | **Overreact to information** (Phản ứng thái quá với thông tin) | Xu hướng mà các nhà đầu tư hoặc giá cổ phiếu phản ứng quá mạnh đối với thông tin, dẫn đến giá cổ phiếu bị đẩy xa khỏi giá trị cơ bản. | |
 | **Underreact to information** (Phản ứng chưa đầy đủ với thông tin) | Xu hướng mà giá cổ phiếu phản ứng quá chậm (bị trì hoãn) đối với thông tin, đặc biệt là thông tin đặc thù của công ty (firm-specific information). | |
@@ -192,8 +192,8 @@ Trong đó:
 
 ### C. Các Thuật ngữ Mô hình và Thống kê
 
-| Thuật ngữ | Khái niệm/Giải thích | Nguồn |
-| :--- | :--- | :--- |
+| Thuật ngữ | Khái niệm/Giải thích |
+| :--- | :--- | 
 | **Simple One-Factor Model** (Mô hình Một yếu tố Đơn giản) | Mô hình được sử dụng để mô tả lợi suất cổ phiếu, trong đó lợi suất được phân tách thành lợi suất kỳ vọng vô điều kiện, lợi suất bất ngờ vô điều kiện trên danh mục mô phỏng yếu tố, và thành phần đặc thù của công ty. | |
 | **Factor Sensitivity ($b_i$) / Beta ($\beta$)** (Độ nhạy Yếu tố / Beta) | Độ nhạy của chứng khoán $i$ đối với yếu tố chung (factor). Beta là một chỉ số phổ biến nhất của rủi ro hệ thống. | |
 | **Value-weighted index** (Chỉ số Trọng số Giá trị) | Chỉ số thị trường được sử dụng làm đại diện cho yếu tố chung ($f_t$) trong hồi quy mô hình thị trường, trong đó trọng số của cổ phiếu được tính dựa trên vốn hóa thị trường của chúng. | |
