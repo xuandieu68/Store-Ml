@@ -82,10 +82,50 @@ Causal Forest là một thuật toán được sử dụng để phân tích **t
 
 Giống như việc lắp ráp một chiếc kính hiển vi phức tạp, các mô hình học máy (ML) tiên tiến như DML hay Causal Forest không chỉ giúp chúng ta nhìn thấy bức tranh tổng thể (như hồi quy tuyến tính truyền thống) mà còn cho phép phân tích chi tiết từng hạt bụi (tác động cá nhân hóa) và loại bỏ được các vết bẩn (thiên vị do biến bị bỏ sót) để có được cái nhìn sắc nét và chính xác hơn về mối quan hệ nhân quả trong dữ liệu tài chính.
 
+---
+# Các kỹ thuật giải thích mô hình (Explainable AI - XAI)
+
+### 1. VIP (Variable Importance in the Projection - Tầm quan trọng của biến)
+VIP là một kỹ thuật cung cấp cái nhìn **tổng thể (global)** về mức độ ảnh hưởng của các đặc trưng đầu vào đối với dự đoán của mô hình.
+
+*   **Cơ chế:** VIP định lượng đóng góp của từng tính năng dựa trên quá trình chiếu hoặc phân rã các trọng số của mô hình,. Trong các mô hình dựa trên cây (như Random Forest), tầm quan trọng thường được đo bằng mức độ giảm độ tinh khiết (impurity decrease) trung bình qua các lần chia,.
+*   **Đặc điểm:** 
+    *   Kết quả thường được chuẩn hóa trên thang điểm từ **0 đến 100**, trong đó 100 là biến quan trọng nhất,.
+    *   Nó cho phép xác định thứ tự xếp hạng của các yếu tố quyết định (ví dụ: quy mô công ty, ROA trong dự báo giá trị doanh nghiệp),.
+    *   **Hạn chế:** VIP chỉ cung cấp giá trị quan trọng chung cho toàn bộ tập dữ liệu mà không cho biết hướng tác động (tích cực hay tiêu cực) đối với từng trường hợp cụ thể.
+
+### 2. LIME (Local Interpretable Model-agnostic Explanations)
+LIME là kỹ thuật tập trung vào việc giải thích **cục bộ (local)** cho từng dự đoán đơn lẻ của mô hình.
+
+*   **Cơ chế:** LIME tạo ra các **mô hình thay thế tuyến tính (surrogate models)** đơn giản xung quanh một điểm dữ liệu cụ thể để xấp xỉ hành vi của mô hình phức tạp tại khu vực đó.
+*   **Ưu điểm:** 
+    *   Rất phù hợp cho các quy trình ra quyết định mang tính cá nhân hóa hoặc theo từng thương vụ (như đầu tư vốn mạo hiểm - VC), nơi người dùng cần biết lý do cụ thể cho một kết quả duy nhất,.
+    *   Có tính chất **"mô hình độc lập" (model-agnostic)**, nghĩa là có thể áp dụng cho bất kỳ thuật toán nào từ hồi quy đến mạng nơ-ron,.
+*   **Hạn chế:** LIME có thể thể hiện sự **không ổn định** trong các bối cảnh dữ liệu có số chiều cao hoặc mẫu nhỏ.
+
+### 3. SHAP (SHapley Additive exPlanations)
+SHAP là một khung giải thích mạnh mẽ kết hợp cả khả năng giải thích **cục bộ và toàn cầu**.
+
+*   **Cơ chế:** Dựa trên **lý thuyết trò chơi hợp tác (Shapley values)**, SHAP phân giải một dự đoán thành tổng các đóng góp của từng đặc trưng đầu vào,. Nó tính toán giá trị đóng góp công bằng cho mỗi biến bằng cách xem xét tất cả các tổ hợp có thể có của các biến đó.
+*   **Ưu điểm vượt trội:**
+    *   **Hướng và Độ lớn:** Khác với VIP, SHAP nắm bắt được cả **hướng tác động** (biến đó làm tăng hay giảm giá trị dự báo) và **độ lớn** của đóng góp đó.
+    *   **Tính nhất quán:** SHAP cung cấp các đảm bảo về tính nhất quán toán học mạnh mẽ hơn so với LIME.
+    *   **Phù hợp với trực giác:** Cách trình bày của SHAP thường dễ hiểu và phù hợp với cách suy luận của con người hơn,.
+
+### So sánh tóm tắt giữa các kỹ thuật
+
+| Tiêu chí | VIP | LIME | SHAP |
+| :--- | :--- | :--- | :--- |
+| **Phạm vi giải thích** | Toàn cầu (Global) | Cục bộ (Local) | Cả hai (Global & Local) |
+| **Thông tin cung cấp** | Chỉ độ lớn (tầm quan trọng) | Đóng góp cục bộ của biến | Cả hướng (+/-) và độ lớn |
+| **Nền tảng lý thuyết** | Trọng số mô hình/Cây chia | Mô hình thay thế tuyến tính | Lý thuyết trò chơi (Shapley) |
+| **Độ ổn định** | Cao | Thấp hơn (dễ biến động) | Cao (nhất quán hơn) |
+
+**Ví dụ tương dụ:**
+Hãy tưởng tượng việc đánh giá hiệu suất của một đội bóng. **VIP** giống như việc xem bảng thống kê cả mùa giải để biết ai là cầu thủ quan trọng nhất đội. **LIME** giống như việc phân tích riêng một trận đấu cụ thể để xem vì sao cầu thủ đó chơi tốt trong 90 phút đó. Còn **SHAP** giống như một hệ thống phân tích chi tiết không chỉ cho biết ai giỏi nhất trận mà còn tính toán chính xác cầu thủ đó đã đóng góp bao nhiêu phần trăm vào bàn thắng, bao gồm cả việc chuyển hướng bóng có lợi hay có hại cho tình huống đó,.
 
 
 # SHAP
----
 
 ## 🔹 1. Trước hết: SHAP là gì?
 
@@ -103,8 +143,6 @@ $$\text{Prediction} = E[\text{model output}] + \sum_i \text{SHAP value}_i$$
 
 ✅ SHAP **không giả định mô hình tuyến tính**, mà hoạt động với **mọi loại mô hình** (XGBoost, Random Forest, Neural Network...).
 Do đó, nó là **công cụ giải thích phi tuyến tốt nhất hiện nay**.
-
----
 
 ## 🔹 2. Vậy SHAP giải thích được *tính phi tuyến* như thế nào?
 
@@ -125,8 +163,6 @@ Ví dụ minh họa (mô tả đơn giản):
 | Đường cong chữ U       | firm value giảm khi leverage thấp/quá cao → có **ngưỡng tối ưu**                   |
 | Đường sigmoid          | tác động mạnh ở vùng trung bình, yếu ở cực trị → **mối quan hệ phi tuyến bão hòa** |
 
----
-
 ## 🔹 3. So sánh khả năng “phát hiện phi tuyến” giữa SHAP và hồi quy truyền thống
 
 | Đặc điểm                    | Hồi quy tuyến tính (OLS)                | Mô hình ML + SHAP                                |
@@ -137,7 +173,7 @@ Ví dụ minh họa (mô tả đơn giản):
 | Diễn giải quan hệ phi tuyến | Giới hạn                                | SHAP plot thể hiện trực tiếp                     |
 | Tương tác (interaction)     | Phải thêm thủ công (X1*X2)              | SHAP interaction values có thể phát hiện tự động |
 
----
+
 
 ## 🔹 5. Tuy nhiên — SHAP không “biết” tuyến tính hay phi tuyến theo nghĩa thống kê
 * SHAP **không kiểm định thống kê** như hồi quy (không có p-value, không có β).
@@ -147,7 +183,6 @@ Ví dụ minh họa (mô tả đơn giản):
 1. Dùng ML + SHAP để **phát hiện dạng phi tuyến**,
 2. Sau đó **kiểm chứng lại bằng hồi quy phi tuyến (chẳng hạn thêm bậc hai hoặc tương tác)** để có kết quả thống kê rõ ràng.
 
----
 
 ## 🔹 6. ✅ Kết luận tóm tắt
 
